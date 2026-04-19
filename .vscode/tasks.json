@@ -1,0 +1,11 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run full pipeline with fixed node ID encoding",
+			"type": "shell",
+			"command": "python testAll.py",
+			"problemMatcher": []
+		}
+	]
+}
