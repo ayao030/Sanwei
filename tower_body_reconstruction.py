@@ -37,6 +37,19 @@ def _is_num(x) -> bool:
         return False
 
 
+def _drawing_sort_key(value):
+    """Natural order for drawing names like 07.txt, J1-7.txt, J1-11.txt."""
+    stem = os.path.splitext(os.path.basename(str(value)))[0]
+    parts = re.split(r"(\d+)", stem)
+    key = tuple((0, int(part)) if part.isdigit() else (1, part.lower()) for part in parts)
+    return key, stem.lower()
+
+
+def _sort_model_records(ganjian: List[dict], jiedian: List[dict]) -> None:
+    ganjian.sort(key=lambda member: _drawing_sort_key(member.get("member_id", "")))
+    jiedian.sort(key=lambda node: _drawing_sort_key(node.get("node_id", "")))
+
+
 def _get_xyz(node: dict) -> Optional[Point3D]:
     if all(k in node for k in ("X", "Y", "Z")) and all(_is_num(node[k]) for k in ("X", "Y", "Z")):
         return float(node["X"]), float(node["Y"]), float(node["Z"])
@@ -177,7 +190,7 @@ def autodetect_and_stage(root_dir: str) -> Tuple[str, str]:
     _empty_dir(single_dir)
     _empty_dir(other_dir)
 
-    txts = sorted(glob.glob(os.path.join(root_dir, "*.txt")))
+    txts = sorted(glob.glob(os.path.join(root_dir, "*.txt")), key=_drawing_sort_key)
     for p in txts:
         mode = detect_dataset_type(p)
         basename = os.path.basename(p)
@@ -277,7 +290,7 @@ def run_single_view_B(single_dir: str, file_glob: str = "*.txt"):
     2. 调用 single_view_processor 进行三维化（基于分类假设）。
     3. 寻找最佳的“桥接点”（通常是塔头底部的最宽处），用于后续与塔身对接。
     """
-    paths = sorted(glob.glob(os.path.join(single_dir, file_glob)))
+    paths = sorted(glob.glob(os.path.join(single_dir, file_glob)), key=_drawing_sort_key)
     filelist: List[int | str] = []
     for p in paths:
         stem = os.path.splitext(os.path.basename(p))[0]
@@ -286,13 +299,17 @@ def run_single_view_B(single_dir: str, file_glob: str = "*.txt"):
         except Exception:
             filelist.append(stem)
 
-    filelist.sort()
+    # single_view() stacks files from bottom to top: each later file is placed
+    # above the previous one. Single-view tower-head drawings are numbered in
+    # top-to-bottom order, so feed them to the stacker from bottom to top.
+    filelist.sort(key=_drawing_sort_key)
 
     if not filelist:
         return [], [], None, None, None, {}
 
     # 调用单视图核心处理逻辑
     ganjian_B, jiedian_B = sv.single_view(filelist, single_dir)
+    _sort_model_records(ganjian_B, jiedian_B)
     axis_map = _build_axis_reference_map(jiedian_B)
 
     # 寻找 B 线底部的最佳桥接特征点 (z_top, UL, UR, special_id, base_id)
@@ -322,22 +339,47 @@ def run_single_view_B(single_dir: str, file_glob: str = "*.txt"):
 # 几何桥接与 ID 复用 (Merging)
 # =========================
 
-def apply_numeric_transform_B(jiedian_B: List[dict], s: float, t: Point3D, axis_map: Optional[Dict[str, Dict[str, str]]] = None):
+def _collect_main_leg_node_ids(ganjian_B: List[dict]) -> set[str]:
+    out: set[str] = set()
+    for member in ganjian_B:
+        member_id = str(member.get("member_id", "")).split("_")[0]
+        if not member_id.endswith(("01", "02")):
+            continue
+        for node_key in ("node1_id", "node2_id"):
+            node_id = member.get(node_key)
+            if isinstance(node_id, str) and node_id:
+                out.add(node_id)
+    return out
+
+
+def apply_numeric_transform_B(
+    jiedian_B: List[dict],
+    s: float,
+    t: Point3D,
+    axis_map: Optional[Dict[str, Dict[str, str]]] = None,
+    signed_x_node_ids: Optional[set[str]] = None,
+):
     """
     对 B 线（塔头）的所有节点执行 缩放(s) + 平移(t) 变换。
     目的是将塔头“安装”到塔身顶部。
     """
     axis_map = axis_map or {}
+    signed_x_node_ids = signed_x_node_ids or set()
 
     for nd in jiedian_B:
         nt = int(nd.get("node_type", 0))
         if nt == 11:
             if all(k in nd for k in ("X", "Y", "Z")):
-                nd["X"] = round(abs(float(nd["X"])) * s + t[0], 6)
+                x_val = float(nd["X"])
+                # Every real node shares the same bridge transform.  Taking
+                # abs(X) for non-main-leg nodes mirrors rotated side members
+                # across the tower and creates cross-space connections.
+                nd["X"] = round(x_val * s + t[0], 6)
                 nd["Y"] = round(float(nd["Y"]) * s + t[1], 6)
                 nd["Z"] = round(float(nd["Z"]) * s + t[2], 6)
             elif all(k in nd for k in ("x", "y", "z")):
-                nd["x"] = round(abs(float(nd["x"])) * s + t[0], 6)
+                x_val = float(nd["x"])
+                nd["x"] = round(x_val * s + t[0], 6)
                 nd["y"] = round(float(nd["y"]) * s + t[1], 6)
                 nd["z"] = round(float(nd["z"]) * s + t[2], 6)
         elif nt == 12:
@@ -364,6 +406,8 @@ def apply_numeric_transform_B(jiedian_B: List[dict], s: float, t: Point3D, axis_
                 _transform_axis(axis_key, idx)
             for axis_key, idx in (("x", 0), ("y", 1), ("z", 2)):
                 _transform_axis(axis_key, idx)
+
+
 
 
 def _collect_11_nodes(jiedian: List[dict]) -> Dict[str, Point3D]:
@@ -399,7 +443,10 @@ def pick_bottom_support_point_for_bridge_A(jiedian_A: List[dict]) -> Tuple[str, 
     return best_id, best_xyz
 
 
-def pick_top_member_point_for_bridge_B(jiedian_B: List[dict]) -> Tuple[str, Point3D]:
+def pick_top_member_point_for_bridge_B(
+    jiedian_B: List[dict],
+    preferred_y_sign: Optional[int] = None,
+) -> Tuple[str, Point3D]:
     """
     在 B 线（塔头）中寻找用于桥接的“底部”基准点。
     策略：找 Z 最小（最低）、且 X/Y 最大（最靠外）的 11 类节点。
@@ -413,8 +460,25 @@ def pick_top_member_point_for_bridge_B(jiedian_B: List[dict]) -> Tuple[str, Poin
             candidates[str(nd.get("node_id"))] = xyz
     if not candidates:
         raise RuntimeError("B线：未找到可用于桥接的节点")
+    def _side_sign(y_val: float, eps: float = 1e-9) -> int:
+        if y_val > eps:
+            return 1
+        if y_val < -eps:
+            return -1
+        return 0
+
+    filtered_candidates = candidates
+    if preferred_y_sign in (-1, 1):
+        same_side = {
+            nid: xyz
+            for nid, xyz in candidates.items()
+            if _side_sign(xyz[1]) == preferred_y_sign
+        }
+        if same_side:
+            filtered_candidates = same_side
+
     best_id, best_xyz = min(
-        candidates.items(),
+        filtered_candidates.items(),
         key=lambda item: (item[1][2], -math.hypot(item[1][0], item[1][1]), item[0]),
     )
     return best_id, best_xyz
@@ -444,7 +508,11 @@ def _apply_id_map_family_to_B(id_map: Dict[str, str], ganjian_B: List[dict], jie
                     nd[key] = "1" + id_map[v[1:]]
 
     # 更新 B 线杆件的连接关系
+    protected_endpoint_members = {"1105", "1106", "1109", "1110"}
     for m in ganjian_B:
+        member_id = str(m.get("member_id", "")).split("_")[0]
+        if member_id in protected_endpoint_members:
+            continue
         n1, n2 = str(m.get("node1_id", "")), str(m.get("node2_id", ""))
         if n1 in id_map:
             m["node1_id"] = id_map[n1]
@@ -595,15 +663,13 @@ def merge_and_print(ganjian_A, jiedian_A, pinjie_A, ganjian_B, jiedian_B):
         seen.add(k)
         ganjian.append(m)
 
-    # 处理 member_id，移除 "_" 及其后缀，但保护 F_ 和 R_
+    # 保留输入中的实例后缀（如 113_1 / 113_2），避免不同实际杆件重名。
     for m in ganjian:
         mid = str(m.get("member_id", ""))
         if mid.startswith("F_") or mid.startswith("R_"):
             parts = mid.split("_")
             if len(parts) > 2:  # 例如 F_501_1 -> F_501
                 m["member_id"] = f"{parts[0]}_{parts[1]}"
-        elif "_" in mid:
-            m["member_id"] = mid.split("_")[0]
 
     pinjie = list(pinjie_A)
 
@@ -750,7 +816,8 @@ def run(dual_dir: str, single_dir: str):
 
     # 计算对齐参数
     _, A_point = pick_bottom_support_point_for_bridge_A(jiedian_A)
-    _, B_point = pick_top_member_point_for_bridge_B(jiedian_B)
+    preferred_y_sign = -1 if A_point[1] < 0 else (1 if A_point[1] > 0 else 0)
+    _, B_point = pick_top_member_point_for_bridge_B(jiedian_B, preferred_y_sign=preferred_y_sign)
 
     # 假设：B 线底部宽度应匹配 A 线顶部宽度
     # 这里用 X 坐标估算缩放比例
@@ -769,7 +836,14 @@ def run(dual_dir: str, single_dir: str):
     )
 
     # 应用变换到 B 线
-    apply_numeric_transform_B(jiedian_B, scale, translation, axis_map=axis_map)
+    signed_x_node_ids = _collect_main_leg_node_ids(ganjian_B)
+    apply_numeric_transform_B(
+        jiedian_B,
+        scale,
+        translation,
+        axis_map=axis_map,
+        signed_x_node_ids=signed_x_node_ids,
+    )
 
     return merge_and_print(ganjian_A, jiedian_A, pinjie_A, ganjian_B, jiedian_B)
 
@@ -795,7 +869,7 @@ def build_tower_body(tashen_dir):
 def main():
     """命令行入口，可选传入数据目录。"""
 
-    default_data_directory = r"D:\SanWei\TaShen\test"
+    default_data_directory = r"D:\SanWei\TaShen\output\7837"
 
     if len(sys.argv) > 1:
         data_directory = sys.argv[1]

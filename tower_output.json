@@ -1,1811 +1,3053 @@
 {
   "ganjian": [
     {
-      "member_id": "502",
-      "node1_id": "50210",
-      "node2_id": "50220",
+      "member_id": "1121",
+      "node1_id": "401111",
+      "node2_id": "319310",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "113",
+      "node1_id": "319110",
+      "node2_id": "319310",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1253",
+      "node1_id": "401113",
+      "node2_id": "401111",
+      "symmetry_type": 0
+    },
+    {
+      "member_id": "139",
+      "node1_id": "401113",
+      "node2_id": "329112",
+      "symmetry_type": 0
+    },
+    {
+      "member_id": "140",
+      "node1_id": "329110",
+      "node2_id": "329112",
+      "symmetry_type": 0
+    },
+    {
+      "member_id": "141",
+      "node1_id": "339110",
+      "node2_id": "339112",
+      "symmetry_type": 0
+    },
+    {
+      "member_id": "1051",
+      "node1_id": "401111",
+      "node2_id": "30120",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1071",
+      "node1_id": "201111",
+      "node2_id": "30120",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "2112",
+      "node1_id": "601111",
+      "node2_id": "419310",
       "symmetry_type": 4
     },
     {
-      "member_id": "501",
-      "node1_id": "50211",
-      "node2_id": "50221",
+      "member_id": "212",
+      "node1_id": "419110",
+      "node2_id": "419310",
       "symmetry_type": 4
     },
     {
-      "member_id": "502",
-      "node1_id": "50213",
-      "node2_id": "50223",
+      "member_id": "213",
+      "node1_id": "419110",
+      "node2_id": "419320",
       "symmetry_type": 4
+    },
+    {
+      "member_id": "214",
+      "node1_id": "419120",
+      "node2_id": "419320",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "2422",
+      "node1_id": "601113",
+      "node2_id": "429112",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "243",
+      "node1_id": "429110",
+      "node2_id": "429112",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "2441",
+      "node1_id": "429110",
+      "node2_id": "429122",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "2451",
+      "node1_id": "429120",
+      "node2_id": "429122",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "246",
+      "node1_id": "439110",
+      "node2_id": "439112",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "247",
+      "node1_id": "439120",
+      "node2_id": "439122",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "2041",
+      "node1_id": "601111",
+      "node2_id": "40120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "2062",
+      "node1_id": "501111",
+      "node2_id": "40120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "101",
+      "node1_id": "10110",
+      "node2_id": "10120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "103_1",
+      "node1_id": "10111",
+      "node2_id": "10121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "103_2",
+      "node1_id": "10111",
+      "node2_id": "10121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "104_1",
+      "node1_id": "10113",
+      "node2_id": "10123",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "109_1",
+      "node1_id": "10120",
+      "node2_id": "10121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "115_1",
+      "node1_id": "115110",
+      "node2_id": "115111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "122_1",
+      "node1_id": "10110",
+      "node2_id": "10111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "130",
+      "node1_id": "115111",
+      "node2_id": "115113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "135",
+      "node1_id": "10111",
+      "node2_id": "10113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "125_1",
+      "node1_id": "10121",
+      "node2_id": "10123",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "111_1",
+      "node1_id": "10120",
+      "node2_id": "115111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "111_2",
+      "node1_id": "115110",
+      "node2_id": "10121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "120_1",
+      "node1_id": "F120110",
+      "node2_id": "115111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "121_1",
+      "node1_id": "F120110",
+      "node2_id": "10111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "128",
+      "node1_id": "R12810",
+      "node2_id": "10121",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "129",
+      "node1_id": "115111",
+      "node2_id": "R12810",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "132",
+      "node1_id": "R13210",
+      "node2_id": "115111",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "133",
+      "node1_id": "R13310",
+      "node2_id": "R13210",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "134",
+      "node1_id": "10113",
+      "node2_id": "R13310",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "201_1",
+      "node1_id": "201110",
+      "node2_id": "201120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "203_1",
+      "node1_id": "201111",
+      "node2_id": "201121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "201_2",
+      "node1_id": "201113",
+      "node2_id": "201123",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "203_2",
+      "node1_id": "201111",
+      "node2_id": "201121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "216",
+      "node1_id": "201110",
+      "node2_id": "201111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "230",
+      "node1_id": "201111",
+      "node2_id": "201113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "227_1",
+      "node1_id": "201121",
+      "node2_id": "201123",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "219",
+      "node1_id": "201110",
+      "node2_id": "F21920",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "220",
+      "node1_id": "F21921",
+      "node2_id": "201111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "222",
+      "node1_id": "F21921",
+      "node2_id": "F22220",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "223",
+      "node1_id": "F22221",
+      "node2_id": "F21920",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "225",
+      "node1_id": "F22221",
+      "node2_id": "F22520",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "226",
+      "node1_id": "F22521",
+      "node2_id": "F22220",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "210_1",
+      "node1_id": "201120",
+      "node2_id": "201111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "210_2",
+      "node1_id": "201110",
+      "node2_id": "201121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "232",
+      "node1_id": "F21922",
+      "node2_id": "201111",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "233",
+      "node1_id": "F21920",
+      "node2_id": "201113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "235",
+      "node1_id": "F22222",
+      "node2_id": "F21920",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "236",
+      "node1_id": "F22220",
+      "node2_id": "F21922",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "238",
+      "node1_id": "F22522",
+      "node2_id": "F22220",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "239",
+      "node1_id": "F22520",
+      "node2_id": "F22222",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "229_1",
+      "node1_id": "201113",
+      "node2_id": "201121",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "229_2",
+      "node1_id": "201111",
+      "node2_id": "201123",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "301_1",
+      "node1_id": "301110",
+      "node2_id": "301120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "303_1",
+      "node1_id": "301111",
+      "node2_id": "301121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "301_2",
+      "node1_id": "301210",
+      "node2_id": "301220",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "303_2",
+      "node1_id": "301111",
+      "node2_id": "301121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "304",
+      "node1_id": "F30410",
+      "node2_id": "301121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "305",
+      "node1_id": "301120",
+      "node2_id": "F30411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "306",
+      "node1_id": "F30610",
+      "node2_id": "F30411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "307",
+      "node1_id": "F30410",
+      "node2_id": "F30611",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "309",
+      "node1_id": "F30910",
+      "node2_id": "F30611",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "310",
+      "node1_id": "F30610",
+      "node2_id": "F30911",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "312",
+      "node1_id": "301110",
+      "node2_id": "F30911",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "313",
+      "node1_id": "F30910",
+      "node2_id": "301111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "314",
+      "node1_id": "R31410",
+      "node2_id": "R31420",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "315",
+      "node1_id": "R31510",
+      "node2_id": "R31420",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "316",
+      "node1_id": "R31610",
+      "node2_id": "R31510",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "317",
+      "node1_id": "R31710",
+      "node2_id": "R31410",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "318",
+      "node1_id": "R31810",
+      "node2_id": "R31710",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "319",
+      "node1_id": "R31910",
+      "node2_id": "R31610",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "321",
+      "node1_id": "R32110",
+      "node2_id": "R31910",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "322",
+      "node1_id": "R32210",
+      "node2_id": "R31810",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "324",
+      "node1_id": "301111",
+      "node2_id": "R32210",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "325",
+      "node1_id": "301210",
+      "node2_id": "R32110",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "401_1",
+      "node1_id": "401110",
+      "node2_id": "401120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "403_1",
+      "node1_id": "401111",
+      "node2_id": "401121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "401_2",
+      "node1_id": "401113",
+      "node2_id": "401123",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "403_2",
+      "node1_id": "401111",
+      "node2_id": "401121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "412",
+      "node1_id": "401110",
+      "node2_id": "401111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "424",
+      "node1_id": "401111",
+      "node2_id": "401113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "404",
+      "node1_id": "F40410",
+      "node2_id": "401121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "405",
+      "node1_id": "401120",
+      "node2_id": "F40411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "406",
+      "node1_id": "F40610",
+      "node2_id": "F40411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "407",
+      "node1_id": "F40410",
+      "node2_id": "F40611",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "408",
+      "node1_id": "F40810",
+      "node2_id": "F40611",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "409",
+      "node1_id": "F40610",
+      "node2_id": "F40811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "410",
+      "node1_id": "401110",
+      "node2_id": "F40811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "411",
+      "node1_id": "F40810",
+      "node2_id": "401111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "414",
+      "node1_id": "R41410",
+      "node2_id": "R41420",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "415",
+      "node1_id": "R41412",
+      "node2_id": "R41420",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "416",
+      "node1_id": "R41610",
+      "node2_id": "R41412",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "417",
+      "node1_id": "R41612",
+      "node2_id": "R41410",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "418",
+      "node1_id": "R41810",
+      "node2_id": "R41612",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "419",
+      "node1_id": "R41812",
+      "node2_id": "R41610",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "420",
+      "node1_id": "R42010",
+      "node2_id": "R41812",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "421",
+      "node1_id": "R42012",
+      "node2_id": "R41810",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "422",
+      "node1_id": "R42210",
+      "node2_id": "R42010",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "423",
+      "node1_id": "R42210",
+      "node2_id": "R42012",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "501_1",
+      "node1_id": "501110",
+      "node2_id": "501120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "503_1",
+      "node1_id": "501111",
+      "node2_id": "501121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "501_2",
+      "node1_id": "501113",
+      "node2_id": "501123",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "503_2",
+      "node1_id": "501111",
+      "node2_id": "501121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "512",
+      "node1_id": "501110",
+      "node2_id": "501111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "522",
+      "node1_id": "501111",
+      "node2_id": "501113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "504",
+      "node1_id": "F50410",
+      "node2_id": "F50420",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "505",
+      "node1_id": "F50420",
+      "node2_id": "F50411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "506",
+      "node1_id": "F50610",
+      "node2_id": "F50411",
+      "symmetry_type": 2
     },
     {
       "member_id": "507",
-      "node1_id": "50710",
-      "node2_id": "50711",
+      "node1_id": "F50410",
+      "node2_id": "F50611",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "508",
+      "node1_id": "F50810",
+      "node2_id": "F50611",
       "symmetry_type": 2
     },
     {
       "member_id": "509",
-      "node1_id": "50910",
-      "node2_id": "50911",
+      "node1_id": "F50610",
+      "node2_id": "F50811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "510",
+      "node1_id": "501110",
+      "node2_id": "F50811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "511",
+      "node1_id": "F50810",
+      "node2_id": "501111",
       "symmetry_type": 2
     },
     {
       "member_id": "514",
-      "node1_id": "51410",
-      "node2_id": "51411",
-      "symmetry_type": 2
+      "node1_id": "R51410",
+      "node2_id": "501123",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "515",
+      "node1_id": "R51412",
+      "node2_id": "501121",
+      "symmetry_type": 1
     },
     {
       "member_id": "516",
-      "node1_id": "50210",
-      "node2_id": "50211",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "537",
-      "node1_id": "50711",
-      "node2_id": "50713",
+      "node1_id": "R51610",
+      "node2_id": "R51412",
       "symmetry_type": 1
     },
     {
-      "member_id": "539",
-      "node1_id": "50911",
-      "node2_id": "50913",
+      "member_id": "517",
+      "node1_id": "R51612",
+      "node2_id": "R51410",
       "symmetry_type": 1
     },
     {
-      "member_id": "544",
-      "node1_id": "51411",
-      "node2_id": "51413",
+      "member_id": "518",
+      "node1_id": "R51810",
+      "node2_id": "R51612",
       "symmetry_type": 1
     },
     {
-      "member_id": "546",
-      "node1_id": "50211",
-      "node2_id": "50213",
+      "member_id": "519",
+      "node1_id": "R51812",
+      "node2_id": "R51610",
       "symmetry_type": 1
     },
     {
-      "member_id": "F_503",
-      "node1_id": "F50310",
-      "node2_id": "50221",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_504",
-      "node1_id": "50220",
-      "node2_id": "F50420",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_505",
-      "node1_id": "50710",
-      "node2_id": "F50420",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_506",
-      "node1_id": "F50310",
-      "node2_id": "50711",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_508",
-      "node1_id": "50910",
-      "node2_id": "50711",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_508",
-      "node1_id": "50710",
-      "node2_id": "50911",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_510",
-      "node1_id": "F51010",
-      "node2_id": "50911",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_511",
-      "node1_id": "50910",
-      "node2_id": "F51120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_512",
-      "node1_id": "51410",
-      "node2_id": "F51120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_513",
-      "node1_id": "F51010",
-      "node2_id": "51411",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_515",
-      "node1_id": "51410",
-      "node2_id": "50211",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_515",
-      "node1_id": "50210",
-      "node2_id": "51411",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_517",
-      "node1_id": "F51710",
-      "node2_id": "F51720",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_518",
-      "node1_id": "F51810",
-      "node2_id": "F51820",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_519",
-      "node1_id": "F519110",
-      "node2_id": "F51710",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_519",
-      "node1_id": "F51820",
-      "node2_id": "F519220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_520",
-      "node1_id": "F519110",
-      "node2_id": "F51720",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_521",
-      "node1_id": "F51810",
-      "node2_id": "F519220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_522",
-      "node1_id": "F52210",
-      "node2_id": "F52220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_523",
-      "node1_id": "F52310",
-      "node2_id": "F52320",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_524",
-      "node1_id": "F524110",
-      "node2_id": "F52210",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_524",
-      "node1_id": "F52320",
-      "node2_id": "F524220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_525",
-      "node1_id": "F524110",
-      "node2_id": "F52220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_526",
-      "node1_id": "F52310",
-      "node2_id": "F524220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "R_517",
-      "node1_id": "R51710",
-      "node2_id": "R51720",
+      "member_id": "520",
+      "node1_id": "R52010",
+      "node2_id": "R51810",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_518",
-      "node1_id": "F51720",
-      "node2_id": "R51820",
+      "member_id": "521",
+      "node1_id": "R52010",
+      "node2_id": "R51812",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_519",
-      "node1_id": "R519110",
-      "node2_id": "R51720",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_519",
-      "node1_id": "R519210",
-      "node2_id": "R51820",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_520",
-      "node1_id": "R519110",
-      "node2_id": "R51710",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_521",
-      "node1_id": "R519210",
-      "node2_id": "F51720",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_522",
-      "node1_id": "R52210",
-      "node2_id": "R52220",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_523",
-      "node1_id": "F52220",
-      "node2_id": "R52320",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_524",
-      "node1_id": "R524110",
-      "node2_id": "R52220",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_524",
-      "node1_id": "R524210",
-      "node2_id": "R52320",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_525",
-      "node1_id": "R524110",
-      "node2_id": "R52210",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_526",
-      "node1_id": "R524210",
-      "node2_id": "F52220",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_533",
-      "node1_id": "F50420",
-      "node2_id": "50223",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_534",
-      "node1_id": "R53410",
-      "node2_id": "50221",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_535",
-      "node1_id": "50711",
-      "node2_id": "R53410",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_536",
-      "node1_id": "50713",
-      "node2_id": "F50420",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_538",
-      "node1_id": "50913",
-      "node2_id": "50711",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_538",
-      "node1_id": "50911",
-      "node2_id": "50713",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_540",
-      "node1_id": "F51120",
-      "node2_id": "50913",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_541",
-      "node1_id": "R54110",
-      "node2_id": "50911",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_542",
-      "node1_id": "51411",
-      "node2_id": "R54110",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_543",
-      "node1_id": "51413",
-      "node2_id": "F51120",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_545",
-      "node1_id": "50211",
-      "node2_id": "51413",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_545",
-      "node1_id": "50213",
-      "node2_id": "51411",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "602",
-      "node1_id": "50220",
-      "node2_id": "60220",
+      "member_id": "601_1",
+      "node1_id": "601110",
+      "node2_id": "601120",
       "symmetry_type": 4
     },
     {
-      "member_id": "601",
-      "node1_id": "50221",
-      "node2_id": "60221",
+      "member_id": "603_1",
+      "node1_id": "601111",
+      "node2_id": "601121",
       "symmetry_type": 4
     },
     {
-      "member_id": "602",
-      "node1_id": "50223",
-      "node2_id": "60223",
+      "member_id": "601_2",
+      "node1_id": "601113",
+      "node2_id": "601123",
       "symmetry_type": 4
     },
     {
-      "member_id": "605",
-      "node1_id": "60510",
-      "node2_id": "60511",
+      "member_id": "603_2",
+      "node1_id": "601111",
+      "node2_id": "601121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "618",
+      "node1_id": "601110",
+      "node2_id": "601111",
       "symmetry_type": 2
     },
     {
-      "member_id": "607",
-      "node1_id": "60710",
-      "node2_id": "60711",
+      "member_id": "627",
+      "node1_id": "62730",
+      "node2_id": "62732",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "631",
+      "node1_id": "601111",
+      "node2_id": "601113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "610",
+      "node1_id": "F61010",
+      "node2_id": "F61010",
       "symmetry_type": 2
     },
     {
-      "member_id": "612",
-      "node1_id": "61210",
-      "node2_id": "61211",
+      "member_id": "611",
+      "node1_id": "F61011",
+      "node2_id": "F61011",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "613_1",
+      "node1_id": "62731",
+      "node2_id": "F61010",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "613_2",
+      "node1_id": "F61011",
+      "node2_id": "62730",
       "symmetry_type": 2
     },
     {
       "member_id": "614",
-      "node1_id": "50220",
-      "node2_id": "50221",
+      "node1_id": "62731",
+      "node2_id": "F61420",
       "symmetry_type": 2
     },
     {
-      "member_id": "644",
-      "node1_id": "60511",
-      "node2_id": "60513",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "646",
-      "node1_id": "60711",
-      "node2_id": "60713",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "647",
-      "node1_id": "61211",
-      "node2_id": "61213",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "649",
-      "node1_id": "50221",
-      "node2_id": "50223",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "F_604",
-      "node1_id": "60220",
-      "node2_id": "60511",
+      "member_id": "615",
+      "node1_id": "F61421",
+      "node2_id": "62730",
       "symmetry_type": 2
     },
     {
-      "member_id": "F_604",
-      "node1_id": "60510",
-      "node2_id": "60221",
+      "member_id": "617_1",
+      "node1_id": "601110",
+      "node2_id": "F61420",
       "symmetry_type": 2
     },
     {
-      "member_id": "F_606",
-      "node1_id": "60710",
-      "node2_id": "F606120",
+      "member_id": "617_2",
+      "node1_id": "F61421",
+      "node2_id": "601111",
       "symmetry_type": 2
     },
     {
-      "member_id": "F_606",
-      "node1_id": "F606120",
-      "node2_id": "60711",
+      "member_id": "608",
+      "node1_id": "601120",
+      "node2_id": "F60820",
       "symmetry_type": 2
     },
     {
-      "member_id": "F_608",
-      "node1_id": "F60810",
-      "node2_id": "60711",
+      "member_id": "609",
+      "node1_id": "F60820",
+      "node2_id": "601121",
       "symmetry_type": 2
     },
     {
-      "member_id": "F_609",
-      "node1_id": "60710",
-      "node2_id": "F60920",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_610",
-      "node1_id": "61210",
-      "node2_id": "F60920",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_611",
-      "node1_id": "F60810",
-      "node2_id": "61211",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_613",
-      "node1_id": "50220",
-      "node2_id": "F613120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_613",
-      "node1_id": "F613120",
-      "node2_id": "50221",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_615",
-      "node1_id": "F61510",
-      "node2_id": "F61520",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_616",
-      "node1_id": "F61610",
-      "node2_id": "F61620",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_617",
-      "node1_id": "F617110",
-      "node2_id": "F61510",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_617",
-      "node1_id": "F61620",
-      "node2_id": "F617220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_618",
-      "node1_id": "F617110",
-      "node2_id": "F61520",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_619",
-      "node1_id": "F61610",
-      "node2_id": "F617220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_620",
-      "node1_id": "60510",
-      "node2_id": "F620120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_620",
-      "node1_id": "F620210",
-      "node2_id": "60511",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_621",
-      "node1_id": "F62110",
-      "node2_id": "F62120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_622",
-      "node1_id": "F62210",
-      "node2_id": "F62220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_623",
-      "node1_id": "F623110",
-      "node2_id": "F62110",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_623",
-      "node1_id": "F62220",
-      "node2_id": "F623220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_624",
-      "node1_id": "F623110",
-      "node2_id": "F62120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_625",
-      "node1_id": "F62210",
-      "node2_id": "F623220",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_626",
-      "node1_id": "F62610",
-      "node2_id": "F62620",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_627",
-      "node1_id": "F62710",
-      "node2_id": "F62720",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_628",
-      "node1_id": "F62720",
-      "node2_id": "F628120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_628",
-      "node1_id": "F628210",
-      "node2_id": "F62610",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_629",
-      "node1_id": "F628210",
-      "node2_id": "F62620",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_630",
-      "node1_id": "F62710",
-      "node2_id": "F628120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_631",
-      "node1_id": "61210",
-      "node2_id": "F631120",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "F_631",
-      "node1_id": "F631210",
-      "node2_id": "61211",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "R_608",
-      "node1_id": "F60920",
-      "node2_id": "60713",
+      "member_id": "622",
+      "node1_id": "R62210",
+      "node2_id": "601121",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_609",
-      "node1_id": "R60910",
-      "node2_id": "60711",
+      "member_id": "623",
+      "node1_id": "R62210",
+      "node2_id": "601123",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_610",
-      "node1_id": "61211",
-      "node2_id": "R60910",
+      "member_id": "630_1",
+      "node1_id": "601111",
+      "node2_id": "R62210",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_611",
-      "node1_id": "61213",
-      "node2_id": "F60920",
+      "member_id": "630_2",
+      "node1_id": "601113",
+      "node2_id": "R62210",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_615",
-      "node1_id": "R61510",
-      "node2_id": "R61520",
+      "member_id": "624",
+      "node1_id": "R62410",
+      "node2_id": "F61011",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_616",
-      "node1_id": "F61520",
-      "node2_id": "R61620",
+      "member_id": "625",
+      "node1_id": "R62412",
+      "node2_id": "F61013",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_617",
-      "node1_id": "R617110",
-      "node2_id": "R61620",
+      "member_id": "626_1",
+      "node1_id": "62730",
+      "node2_id": "R62410",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_617",
-      "node1_id": "R617210",
-      "node2_id": "R61520",
+      "member_id": "626_2",
+      "node1_id": "62732",
+      "node2_id": "R62412",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_618",
-      "node1_id": "R617210",
-      "node2_id": "R61510",
+      "member_id": "629_1",
+      "node1_id": "R629110",
+      "node2_id": "62730",
       "symmetry_type": 1
     },
     {
-      "member_id": "R_619",
-      "node1_id": "R617110",
-      "node2_id": "F61520",
+      "member_id": "629_2",
+      "node1_id": "R629112",
+      "node2_id": "62732",
       "symmetry_type": 1
-    },
-    {
-      "member_id": "R_621",
-      "node1_id": "R62110",
-      "node2_id": "R62120",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_622",
-      "node1_id": "F62120",
-      "node2_id": "R62220",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_623",
-      "node1_id": "R623110",
-      "node2_id": "R62120",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_623",
-      "node1_id": "R623210",
-      "node2_id": "R62220",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_624",
-      "node1_id": "R623110",
-      "node2_id": "R62110",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_625",
-      "node1_id": "R623210",
-      "node2_id": "F62120",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_626",
-      "node1_id": "R62610",
-      "node2_id": "R62620",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_627",
-      "node1_id": "F62620",
-      "node2_id": "R62720",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_628",
-      "node1_id": "R628110",
-      "node2_id": "R62620",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_628",
-      "node1_id": "R628210",
-      "node2_id": "R62720",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_629",
-      "node1_id": "R628110",
-      "node2_id": "R62610",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_630",
-      "node1_id": "R628210",
-      "node2_id": "F62620",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_643",
-      "node1_id": "60513",
-      "node2_id": "60221",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_643",
-      "node1_id": "60511",
-      "node2_id": "60223",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_645",
-      "node1_id": "60711",
-      "node2_id": "R645120",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_645",
-      "node1_id": "60713",
-      "node2_id": "R645120",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_648",
-      "node1_id": "50221",
-      "node2_id": "R648120",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_648",
-      "node1_id": "50223",
-      "node2_id": "R648120",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_650",
-      "node1_id": "R650110",
-      "node2_id": "60513",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_650",
-      "node1_id": "R650210",
-      "node2_id": "60511",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_651",
-      "node1_id": "R651110",
-      "node2_id": "61211",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "R_651",
-      "node1_id": "R651210",
-      "node2_id": "61213",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "1101",
-      "node1_id": "110110",
-      "node2_id": "110120",
-      "symmetry_type": 4
-    },
-    {
-      "member_id": "1104",
-      "node1_id": "110120",
-      "node2_id": "110121",
-      "symmetry_type": 2
-    },
-    {
-      "member_id": "1104",
-      "node1_id": "110120",
-      "node2_id": "110122",
-      "symmetry_type": 1
-    },
-    {
-      "member_id": "1105",
-      "node1_id": "110510",
-      "node2_id": "110121",
-      "symmetry_type": 4
-    },
-    {
-      "member_id": "1106",
-      "node1_id": "110510",
-      "node2_id": "110122",
-      "symmetry_type": 4
-    },
-    {
-      "member_id": "1107",
-      "node1_id": "110710",
-      "node2_id": "110720",
-      "symmetry_type": 4
-    },
-    {
-      "member_id": "1108",
-      "node1_id": "110710",
-      "node2_id": "110723",
-      "symmetry_type": 4
-    },
-    {
-      "member_id": "1109",
-      "node1_id": "110110",
-      "node2_id": "110920",
-      "symmetry_type": 4
-    },
-    {
-      "member_id": "1110",
-      "node1_id": "110110",
-      "node2_id": "110923",
-      "symmetry_type": 4
-    },
-    {
-      "member_id": "701",
-      "node1_id": "110120",
-      "node2_id": "70120",
-      "symmetry_type": 4
     },
     {
       "member_id": "704",
-      "node1_id": "70410",
-      "node2_id": "70121",
+      "node1_id": "601_120",
+      "node2_id": "70420",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "706_1",
+      "node1_id": "601_121",
+      "node2_id": "70421",
       "symmetry_type": 4
     },
     {
       "member_id": "705",
-      "node1_id": "70410",
-      "node2_id": "70122",
+      "node1_id": "601_123",
+      "node2_id": "70423",
       "symmetry_type": 4
     },
     {
-      "member_id": "708",
-      "node1_id": "70810",
-      "node2_id": "70811",
+      "member_id": "706_2",
+      "node1_id": "601_121",
+      "node2_id": "70421",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "713",
+      "node1_id": "71310",
+      "node2_id": "71311",
       "symmetry_type": 2
     },
     {
-      "member_id": "708",
-      "node1_id": "70810",
-      "node2_id": "70812",
+      "member_id": "714",
+      "node1_id": "71410",
+      "node2_id": "71411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "717",
+      "node1_id": "71710",
+      "node2_id": "71711",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "728",
+      "node1_id": "601_120",
+      "node2_id": "601_121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "733",
+      "node1_id": "71311",
+      "node2_id": "71313",
       "symmetry_type": 1
     },
     {
-      "member_id": "706",
-      "node1_id": "70610",
-      "node2_id": "70630",
+      "member_id": "734",
+      "node1_id": "71311",
+      "node2_id": "71313",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "736",
+      "node1_id": "71711",
+      "node2_id": "71713",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "747",
+      "node1_id": "601_121",
+      "node2_id": "601_123",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "711",
+      "node1_id": "70420",
+      "node2_id": "F71120",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "712",
+      "node1_id": "F71120",
+      "node2_id": "70421",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "716_1",
+      "node1_id": "71710",
+      "node2_id": "F716120",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "716_2",
+      "node1_id": "F716121",
+      "node2_id": "71711",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "722",
+      "node1_id": "F72210",
+      "node2_id": "71711",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "723",
+      "node1_id": "71710",
+      "node2_id": "F72211",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "724",
+      "node1_id": "F72410",
+      "node2_id": "F72211",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "725",
+      "node1_id": "F72210",
+      "node2_id": "F72411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "726",
+      "node1_id": "601_120",
+      "node2_id": "F72411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "727",
+      "node1_id": "F72410",
+      "node2_id": "601_121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "721",
+      "node1_id": "F71120",
+      "node2_id": "F72120",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "701",
+      "node1_id": "R70110",
+      "node2_id": "70423",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "703",
+      "node1_id": "R70110",
+      "node2_id": "70421",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "735_1",
+      "node1_id": "71711",
+      "node2_id": "R735120",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "735_2",
+      "node1_id": "71713",
+      "node2_id": "R735122",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "739",
+      "node1_id": "R73910",
+      "node2_id": "R70110",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "740",
+      "node1_id": "R73912",
+      "node2_id": "R70110",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "741",
+      "node1_id": "R74110",
+      "node2_id": "R73912",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "742",
+      "node1_id": "R74112",
+      "node2_id": "R73910",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "743",
+      "node1_id": "R74310",
+      "node2_id": "R74112",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "744",
+      "node1_id": "R74312",
+      "node2_id": "R74110",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "745",
+      "node1_id": "R74510",
+      "node2_id": "R74310",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "746",
+      "node1_id": "R74510",
+      "node2_id": "R74312",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "801_1",
+      "node1_id": "801110",
+      "node2_id": "801120",
       "symmetry_type": 4
     },
     {
-      "member_id": "707",
-      "node1_id": "70620",
-      "node2_id": "70630",
+      "member_id": "803_1",
+      "node1_id": "801111",
+      "node2_id": "801121",
       "symmetry_type": 4
+    },
+    {
+      "member_id": "801_2",
+      "node1_id": "801113",
+      "node2_id": "801123",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "803_2",
+      "node1_id": "801111",
+      "node2_id": "801121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "821",
+      "node1_id": "801110",
+      "node2_id": "801111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "816_1",
+      "node1_id": "816110",
+      "node2_id": "816111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "816_2",
+      "node1_id": "816210",
+      "node2_id": "816211",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "828",
+      "node1_id": "816111",
+      "node2_id": "816113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "836",
+      "node1_id": "801111",
+      "node2_id": "801113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "810",
+      "node1_id": "F81010",
+      "node2_id": "F81020",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "811",
+      "node1_id": "F81021",
+      "node2_id": "F81011",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "813_1",
+      "node1_id": "816110",
+      "node2_id": "F81020",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "813_2",
+      "node1_id": "F81021",
+      "node2_id": "816111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "808",
+      "node1_id": "801120",
+      "node2_id": "F80820",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "809",
+      "node1_id": "F80820",
+      "node2_id": "801121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "819_1",
+      "node1_id": "816110",
+      "node2_id": "801111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "819_2",
+      "node1_id": "801110",
+      "node2_id": "816111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "817",
+      "node1_id": "F80820",
+      "node2_id": "F81720",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "823",
+      "node1_id": "R82310",
+      "node2_id": "801121",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "824",
+      "node1_id": "R82310",
+      "node2_id": "801123",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "830",
+      "node1_id": "R83010",
+      "node2_id": "R82310",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "831",
+      "node1_id": "R83012",
+      "node2_id": "R82310",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "832",
+      "node1_id": "R83210",
+      "node2_id": "R83010",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "833",
+      "node1_id": "R83210",
+      "node2_id": "R83012",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "825",
+      "node1_id": "R82510",
+      "node2_id": "F81011",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "826",
+      "node1_id": "R82512",
+      "node2_id": "F81013",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "827_1",
+      "node1_id": "816111",
+      "node2_id": "R82510",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "827_2",
+      "node1_id": "816113",
+      "node2_id": "R82512",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "901_1",
+      "node1_id": "901110",
+      "node2_id": "901120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "903_1",
+      "node1_id": "901111",
+      "node2_id": "901121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "901_2",
+      "node1_id": "901113",
+      "node2_id": "901123",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "903_2",
+      "node1_id": "901111",
+      "node2_id": "901121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "914",
+      "node1_id": "91410",
+      "node2_id": "91411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "924",
+      "node1_id": "901110",
+      "node2_id": "901111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "933",
+      "node1_id": "91411",
+      "node2_id": "91413",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "942",
+      "node1_id": "901111",
+      "node2_id": "901113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "910",
+      "node1_id": "F91010",
+      "node2_id": "F91020",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "911",
+      "node1_id": "F91021",
+      "node2_id": "F91011",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "913_1",
+      "node1_id": "91410",
+      "node2_id": "F91020",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "913_2",
+      "node1_id": "F91021",
+      "node2_id": "91411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "908",
+      "node1_id": "901120",
+      "node2_id": "F90820",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "909",
+      "node1_id": "F90820",
+      "node2_id": "901121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "918",
+      "node1_id": "F91810",
+      "node2_id": "F90820",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "919",
+      "node1_id": "F90820",
+      "node2_id": "F91811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "920",
+      "node1_id": "F92010",
+      "node2_id": "F91811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "921",
+      "node1_id": "F91810",
+      "node2_id": "F92011",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "922",
+      "node1_id": "F92010",
+      "node2_id": "901111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "923",
+      "node1_id": "901110",
+      "node2_id": "F92011",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "927",
+      "node1_id": "R92710",
+      "node2_id": "901121",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "928",
+      "node1_id": "R92710",
+      "node2_id": "901123",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "936",
+      "node1_id": "R93610",
+      "node2_id": "91411",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "937",
+      "node1_id": "R93612",
+      "node2_id": "91413",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "938",
+      "node1_id": "R93810",
+      "node2_id": "R93612",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "939",
+      "node1_id": "R93812",
+      "node2_id": "R93610",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "940",
+      "node1_id": "R94010",
+      "node2_id": "R93812",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "941",
+      "node1_id": "R94010",
+      "node2_id": "R93810",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "929",
+      "node1_id": "R92910",
+      "node2_id": "F91011",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "930",
+      "node1_id": "R92912",
+      "node2_id": "F91013",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "931_1",
+      "node1_id": "91411",
+      "node2_id": "R92910",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "931_2",
+      "node1_id": "91413",
+      "node2_id": "R92912",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "935",
+      "node1_id": "R93510",
+      "node2_id": "R92710",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1001_1",
+      "node1_id": "1001110",
+      "node2_id": "1001120",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "1003_1",
+      "node1_id": "1001111",
+      "node2_id": "1001121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "1001_2",
+      "node1_id": "1001113",
+      "node2_id": "1001123",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "1003_2",
+      "node1_id": "1001111",
+      "node2_id": "1001121",
+      "symmetry_type": 4
+    },
+    {
+      "member_id": "1018",
+      "node1_id": "101810",
+      "node2_id": "101811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1029",
+      "node1_id": "1001110",
+      "node2_id": "1001111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1035",
+      "node1_id": "103530",
+      "node2_id": "103532",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1041",
+      "node1_id": "101811",
+      "node2_id": "101813",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1049",
+      "node1_id": "1001111",
+      "node2_id": "1001113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1036_1",
+      "node1_id": "101811",
+      "node2_id": "101813",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1036_2",
+      "node1_id": "103530",
+      "node2_id": "103532",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1010",
+      "node1_id": "103531",
+      "node2_id": "F101020",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1011",
+      "node1_id": "F101021",
+      "node2_id": "103530",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1013_1",
+      "node1_id": "F1013110",
+      "node2_id": "F101020",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1013_2",
+      "node1_id": "F101021",
+      "node2_id": "F1013111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1014",
+      "node1_id": "F1013110",
+      "node2_id": "F101420",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1015",
+      "node1_id": "F101421",
+      "node2_id": "F1013111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1017_1",
+      "node1_id": "101810",
+      "node2_id": "F101420",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1017_2",
+      "node1_id": "F101421",
+      "node2_id": "101811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1024",
+      "node1_id": "F102410",
+      "node2_id": "F102420",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1025",
+      "node1_id": "F102421",
+      "node2_id": "F102411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1026_1",
+      "node1_id": "F102420",
+      "node2_id": "F1026120",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1026_2",
+      "node1_id": "F1026121",
+      "node2_id": "F102421",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1027",
+      "node1_id": "F102410",
+      "node2_id": "F1026120",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1028",
+      "node1_id": "F1026121",
+      "node2_id": "F102411",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1008",
+      "node1_id": "1001120",
+      "node2_id": "F100820",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1009",
+      "node1_id": "F100820",
+      "node2_id": "1001121",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1023_1",
+      "node1_id": "101810",
+      "node2_id": "1001111",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1023_2",
+      "node1_id": "1001110",
+      "node2_id": "101811",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1022",
+      "node1_id": "F100820",
+      "node2_id": "F102220",
+      "symmetry_type": 2
+    },
+    {
+      "member_id": "1033",
+      "node1_id": "R103310",
+      "node2_id": "1001121",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1034",
+      "node1_id": "R103310",
+      "node2_id": "1001123",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1037_1",
+      "node1_id": "F1013111",
+      "node2_id": "R1037120",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1037_2",
+      "node1_id": "F1013113",
+      "node2_id": "R1037122",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1043",
+      "node1_id": "R104310",
+      "node2_id": "R103310",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1044",
+      "node1_id": "R104312",
+      "node2_id": "R103310",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1045",
+      "node1_id": "R104510",
+      "node2_id": "R104312",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1046",
+      "node1_id": "R104512",
+      "node2_id": "R104310",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1047",
+      "node1_id": "R104710",
+      "node2_id": "R104510",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1048",
+      "node1_id": "R104710",
+      "node2_id": "R104512",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1038",
+      "node1_id": "R103810",
+      "node2_id": "F1013111",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1039",
+      "node1_id": "R103812",
+      "node2_id": "F1013113",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1040_1",
+      "node1_id": "101811",
+      "node2_id": "R103810",
+      "symmetry_type": 1
+    },
+    {
+      "member_id": "1040_2",
+      "node1_id": "101813",
+      "node2_id": "R103812",
+      "symmetry_type": 1
     }
   ],
   "jiedian": [
     {
-      "node_id": "50210",
+      "node_id": "30120",
       "node_type": 11,
-      "X": -187.5,
-      "Y": -187.298,
+      "symmetry_type": 2,
+      "X": 2998.084,
+      "Y": -0.0,
+      "Z": 6072.325
+    },
+    {
+      "node_id": "319110",
+      "node_type": 12,
+      "symmetry_type": 2,
+      "X": 1474.99,
+      "Y": "1401111",
+      "Z": "130120"
+    },
+    {
+      "node_id": "319310",
+      "node_type": 12,
+      "symmetry_type": 2,
+      "X": 1450.041,
+      "Y": "1201111",
+      "Z": "130120"
+    },
+    {
+      "node_id": "329110",
+      "node_type": 12,
+      "symmetry_type": 2,
+      "X": 1688.868,
+      "Y": "1401113",
+      "Z": "130122"
+    },
+    {
+      "node_id": "339110",
+      "node_type": 12,
+      "symmetry_type": 2,
+      "X": 1729.058,
+      "Y": "1201111",
+      "Z": "130120"
+    },
+    {
+      "node_id": "40120",
+      "node_type": 11,
+      "symmetry_type": 4,
+      "X": 4927.442,
+      "Y": -0.0,
+      "Z": 13503.292
+    },
+    {
+      "node_id": "419110",
+      "node_type": 12,
+      "symmetry_type": 4,
+      "X": 2150.648,
+      "Y": "1601111",
+      "Z": "140120"
+    },
+    {
+      "node_id": "419120",
+      "node_type": 12,
+      "symmetry_type": 4,
+      "X": 3539.64,
+      "Y": "1601111",
+      "Z": "140120"
+    },
+    {
+      "node_id": "419310",
+      "node_type": 12,
+      "symmetry_type": 4,
+      "X": 2070.359,
+      "Y": "1501111",
+      "Z": "140120"
+    },
+    {
+      "node_id": "419320",
+      "node_type": 12,
+      "symmetry_type": 4,
+      "X": 3484.404,
+      "Y": "1501111",
+      "Z": "140120"
+    },
+    {
+      "node_id": "429110",
+      "node_type": 12,
+      "symmetry_type": 4,
+      "X": 1954.837,
+      "Y": "1601113",
+      "Z": "140122"
+    },
+    {
+      "node_id": "429120",
+      "node_type": 12,
+      "symmetry_type": 4,
+      "X": 3297.475,
+      "Y": "1601113",
+      "Z": "140122"
+    },
+    {
+      "node_id": "439110",
+      "node_type": 12,
+      "symmetry_type": 4,
+      "X": 2021.323,
+      "Y": "1501111",
+      "Z": "140120"
+    },
+    {
+      "node_id": "439120",
+      "node_type": 12,
+      "symmetry_type": 4,
+      "X": 3427.955,
+      "Y": "1501111",
+      "Z": "140120"
+    },
+    {
+      "node_id": "10110",
+      "node_type": 11,
+      "X": -171.504,
+      "Y": -171.504,
       "Z": 0.0,
       "symmetry_type": 4
     },
     {
-      "node_id": "50220",
+      "node_id": "10120",
       "node_type": 11,
-      "X": -308.5,
-      "Y": -308.298,
-      "Z": 2691.0,
+      "X": -289.803,
+      "Y": -289.803,
+      "Z": 2693.0,
       "symmetry_type": 4
     },
     {
-      "node_id": "50710",
+      "node_id": "115110",
       "node_type": 11,
-      "X": -255.464,
-      "Y": -255.262,
-      "Z": 1511.5,
+      "X": -239.132,
+      "Y": -239.132,
+      "Z": 1539.5,
       "symmetry_type": 4
     },
     {
-      "node_id": "50910",
-      "node_type": 11,
-      "X": -241.772,
-      "Y": -241.57,
-      "Z": 1207.0,
+      "node_id": "F120110",
+      "node_type": 12,
+      "X": "110110",
+      "Y": "110120",
+      "Z": 776.0,
       "symmetry_type": 4
     },
     {
-      "node_id": "51410",
-      "node_type": 11,
-      "X": -201.192,
-      "Y": -200.989,
-      "Z": 304.5,
+      "node_id": "R12810",
+      "node_type": 12,
+      "X": "110113",
+      "Y": "110123",
+      "Z": 2114.0,
       "symmetry_type": 4
     },
     {
-      "node_id": "F50310",
+      "node_id": "R13210",
+      "node_type": 12,
+      "X": "110113",
+      "Y": "110123",
+      "Z": 1019.0,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R13310",
+      "node_type": 12,
+      "X": "110111",
+      "Y": "110121",
+      "Z": 504.0,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "201110",
       "node_type": 11,
-      "X": -281.5,
-      "Y": -281.274,
-      "Z": 2090.0,
+      "X": -289.803,
+      "Y": -289.803,
+      "Z": 2693.0,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "201120",
+      "node_type": 11,
+      "X": -325.209,
+      "Y": -325.209,
+      "Z": 3498.824,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F21920",
+      "node_type": 11,
+      "X": 254.528,
+      "Y": -254.528,
+      "Z": 1890.156,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F22220",
+      "node_type": 11,
+      "X": 219.162,
+      "Y": -219.162,
+      "Z": 1085.226,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F22520",
+      "node_type": 11,
+      "X": 183.796,
+      "Y": -183.796,
+      "Z": 280.295,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "301110",
+      "node_type": 11,
+      "X": -325.209,
+      "Y": -325.209,
+      "Z": 3498.824,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "301120",
+      "node_type": 11,
+      "X": -438.263,
+      "Y": -438.263,
+      "Z": 6072.325,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "301210",
+      "node_type": 11,
+      "X": 325.209,
+      "Y": 134.579,
+      "Z": 3498.824,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "301220",
+      "node_type": 11,
+      "X": 438.263,
+      "Y": 247.634,
+      "Z": 6072.325,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F30410",
+      "node_type": 12,
+      "X": "1301110",
+      "Y": "1301120",
+      "Z": 5428.95,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F30610",
+      "node_type": 12,
+      "X": "1301110",
+      "Y": "1301120",
+      "Z": 4786.528,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F30910",
+      "node_type": 12,
+      "X": "1301110",
+      "Y": "1301120",
+      "Z": 4143.153,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R31410",
+      "node_type": 11,
+      "X": 422.352,
+      "Y": -422.352,
+      "Z": 5710.129,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R31420",
+      "node_type": 11,
+      "X": 438.263,
+      "Y": -95.791,
+      "Z": 6072.325,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R31510",
+      "node_type": 11,
+      "X": 422.352,
+      "Y": 231.722,
+      "Z": 5710.129,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R31610",
+      "node_type": 12,
+      "X": "1301111",
+      "Y": "1301121",
+      "Z": 5106.786,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R31710",
+      "node_type": 12,
+      "X": "1301210",
+      "Y": "1301220",
+      "Z": 5106.786,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R31810",
+      "node_type": 12,
+      "X": "1301111",
+      "Y": "1301121",
+      "Z": 4502.49,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R31910",
+      "node_type": 12,
+      "X": "1301210",
+      "Y": "1301220",
+      "Z": 4502.49,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R32110",
+      "node_type": 12,
+      "X": "1301111",
+      "Y": "1301121",
+      "Z": 3939.179,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R32210",
+      "node_type": 12,
+      "X": "1301210",
+      "Y": "1301220",
+      "Z": 3939.179,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "401110",
+      "node_type": 11,
+      "X": -438.263,
+      "Y": -438.263,
+      "Z": 6072.325,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "401120",
+      "node_type": 11,
+      "X": -614.691,
+      "Y": -614.691,
+      "Z": 10110.642,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F40410",
+      "node_type": 12,
+      "X": "1401110",
+      "Y": "1401120",
+      "Z": 9114.524,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F40610",
+      "node_type": 12,
+      "X": "1401110",
+      "Y": "1401120",
+      "Z": 8118.406,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F40810",
+      "node_type": 12,
+      "X": "1401110",
+      "Y": "1401120",
+      "Z": 7095.366,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R41410",
+      "node_type": 11,
+      "X": 593.519,
+      "Y": -593.519,
+      "Z": 9626.044,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R41420",
+      "node_type": 11,
+      "X": 614.691,
+      "Y": 0.748,
+      "Z": 10110.642,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R41610",
+      "node_type": 12,
+      "X": "1401111",
+      "Y": "1401121",
+      "Z": 8629.926,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R41810",
+      "node_type": 12,
+      "X": "1401111",
+      "Y": "1401121",
+      "Z": 7606.886,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R42010",
+      "node_type": 12,
+      "X": "1401111",
+      "Y": "1401121",
+      "Z": 6583.845,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R42210",
+      "node_type": 12,
+      "X": "1401111",
+      "Y": "0.748",
+      "Z": "1401113",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "501110",
+      "node_type": 11,
+      "X": -614.691,
+      "Y": -614.691,
+      "Z": 10110.642,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "501120",
+      "node_type": 11,
+      "X": -763.73,
+      "Y": -763.73,
+      "Z": 13503.292,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F50410",
+      "node_type": 11,
+      "X": -739.277,
+      "Y": -739.277,
+      "Z": 12946.646,
       "symmetry_type": 4
     },
     {
       "node_id": "F50420",
       "node_type": 11,
-      "X": 281.5,
-      "Y": -281.274,
-      "Z": 2090.0,
+      "X": 0.628,
+      "Y": -763.73,
+      "Z": 13503.292,
       "symmetry_type": 4
     },
     {
-      "node_id": "F51010",
-      "node_type": 11,
-      "X": -221.5,
-      "Y": -221.246,
-      "Z": 755.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F51120",
-      "node_type": 11,
-      "X": 221.5,
-      "Y": -221.246,
-      "Z": 755.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F51710",
-      "node_type": 11,
-      "X": 171.5,
-      "Y": -302.272,
-      "Z": 2557.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F51720",
-      "node_type": 11,
-      "X": 294.5,
-      "Y": -293.954,
-      "Z": 2372.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F51810",
-      "node_type": 11,
-      "X": -294.5,
-      "Y": -293.954,
-      "Z": 2372.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F51820",
-      "node_type": 11,
-      "X": -171.5,
-      "Y": -302.272,
-      "Z": 2557.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F519110",
-      "node_type": 11,
-      "X": 140.5,
-      "Y": -287.794,
-      "Z": 2235.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F519220",
-      "node_type": 11,
-      "X": -140.5,
-      "Y": -287.794,
-      "Z": 2235.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F52210",
-      "node_type": 11,
-      "X": 161.5,
-      "Y": -275.384,
-      "Z": 1959.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F52220",
-      "node_type": 11,
-      "X": 268.5,
-      "Y": -268.144,
-      "Z": 1798.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F52310",
-      "node_type": 11,
-      "X": -268.5,
-      "Y": -268.144,
-      "Z": 1798.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F52320",
-      "node_type": 11,
-      "X": -161.5,
-      "Y": -275.384,
-      "Z": 1959.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F524110",
-      "node_type": 11,
-      "X": 127.5,
-      "Y": -261.265,
-      "Z": 1645.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F524220",
-      "node_type": 11,
-      "X": -127.5,
-      "Y": -261.265,
-      "Z": 1645.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R51710",
-      "node_type": 11,
-      "X": 294.156,
-      "Y": 294.702,
-      "Z": 2372.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R51720",
-      "node_type": 11,
-      "X": 302.52,
-      "Y": 171.702,
-      "Z": 2558.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R51820",
-      "node_type": 11,
-      "X": 302.52,
-      "Y": -171.298,
-      "Z": 2558.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R519110",
-      "node_type": 11,
-      "X": 288.041,
-      "Y": 140.702,
-      "Z": 2236.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R519210",
-      "node_type": 11,
-      "X": 288.041,
-      "Y": -140.298,
-      "Z": 2236.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R52210",
-      "node_type": 11,
-      "X": 268.391,
-      "Y": 268.702,
-      "Z": 1799.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R52220",
-      "node_type": 11,
-      "X": 275.631,
-      "Y": 161.702,
-      "Z": 1960.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R52320",
-      "node_type": 11,
-      "X": 275.631,
-      "Y": -161.298,
-      "Z": 1960.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R524110",
-      "node_type": 11,
-      "X": 261.557,
-      "Y": 127.702,
-      "Z": 1647.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R524210",
-      "node_type": 11,
-      "X": 261.557,
-      "Y": -127.298,
-      "Z": 1647.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R53410",
-      "node_type": 11,
-      "X": 281.476,
-      "Y": 281.702,
-      "Z": 2090.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R54110",
-      "node_type": 11,
-      "X": 221.538,
-      "Y": 221.702,
-      "Z": 757.0,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "60220",
-      "node_type": 11,
-      "X": -429.017,
-      "Y": -428.815,
-      "Z": 5375.062,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "60510",
-      "node_type": 11,
-      "X": -393.783,
-      "Y": -393.581,
-      "Z": 4590.366,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "60710",
-      "node_type": 11,
-      "X": -377.928,
-      "Y": -377.726,
-      "Z": 4237.253,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "61210",
-      "node_type": 11,
-      "X": -323.497,
-      "Y": -323.295,
-      "Z": 3024.999,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F606120",
-      "node_type": 11,
-      "X": -0.48,
-      "Y": -393.988,
-      "Z": 4599.42,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F60810",
-      "node_type": 11,
-      "X": -351.581,
-      "Y": -351.436,
-      "Z": 3651.749,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F60920",
-      "node_type": 11,
-      "X": 351.627,
-      "Y": -351.436,
-      "Z": 3651.749,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F613120",
-      "node_type": 11,
-      "X": -0.48,
-      "Y": -324.514,
-      "Z": 3052.161,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F61510",
-      "node_type": 11,
-      "X": 236.94,
-      "Y": -420.594,
-      "Z": 5191.966,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F61520",
-      "node_type": 11,
-      "X": 410.982,
-      "Y": -411.333,
-      "Z": 4985.732,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F61610",
-      "node_type": 11,
-      "X": -411.943,
-      "Y": -411.333,
-      "Z": 4985.732,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F61620",
-      "node_type": 11,
-      "X": -236.895,
-      "Y": -420.594,
-      "Z": 5191.966,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F617110",
-      "node_type": 11,
-      "X": 196.7,
-      "Y": -402.299,
-      "Z": 4784.528,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F617220",
-      "node_type": 11,
-      "X": -196.654,
-      "Y": -402.299,
-      "Z": 4784.528,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F620120",
-      "node_type": 11,
-      "X": -189.612,
-      "Y": -386.173,
-      "Z": 4425.379,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F620210",
-      "node_type": 11,
-      "X": 189.657,
-      "Y": -386.173,
-      "Z": 4425.379,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F62110",
-      "node_type": 11,
-      "X": 212.796,
-      "Y": -372.26,
-      "Z": 4115.525,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F62120",
-      "node_type": 11,
-      "X": 364.705,
-      "Y": -364.897,
-      "Z": 3951.543,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F62210",
-      "node_type": 11,
-      "X": -364.66,
-      "Y": -364.897,
-      "Z": 3951.543,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F62220",
-      "node_type": 11,
-      "X": -212.751,
-      "Y": -372.26,
-      "Z": 4115.525,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F623110",
-      "node_type": 11,
-      "X": 175.573,
-      "Y": -357.896,
-      "Z": 3795.61,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F623220",
-      "node_type": 11,
-      "X": -175.528,
-      "Y": -357.896,
-      "Z": 3795.61,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F62610",
-      "node_type": 11,
-      "X": 198.712,
-      "Y": -345.338,
-      "Z": 3515.937,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F62620",
-      "node_type": 11,
-      "X": 338.548,
-      "Y": -337.975,
-      "Z": 3351.955,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F62710",
-      "node_type": 11,
-      "X": -338.503,
-      "Y": -337.975,
-      "Z": 3351.955,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F62720",
-      "node_type": 11,
-      "X": -198.666,
-      "Y": -345.338,
-      "Z": 3515.937,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F628120",
-      "node_type": 11,
-      "X": -162.45,
-      "Y": -330.974,
-      "Z": 3196.022,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F628210",
-      "node_type": 11,
-      "X": 162.495,
-      "Y": -330.974,
-      "Z": 3196.022,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F631120",
-      "node_type": 11,
-      "X": -155.407,
-      "Y": -317.151,
-      "Z": 2888.18,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "F631210",
-      "node_type": 11,
-      "X": 154.447,
-      "Y": -317.151,
-      "Z": 2888.18,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R60910",
-      "node_type": 11,
-      "X": 349.741,
-      "Y": 359.877,
-      "Z": 3609.496,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R61510",
-      "node_type": 11,
-      "X": 411.129,
-      "Y": 422.25,
-      "Z": 4976.678,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R61520",
-      "node_type": 11,
-      "X": 420.615,
-      "Y": 243.179,
-      "Z": 5187.942,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R61620",
-      "node_type": 11,
-      "X": 420.615,
-      "Y": -242.729,
-      "Z": 5187.942,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R617110",
-      "node_type": 11,
-      "X": 401.824,
-      "Y": -201.482,
-      "Z": 4769.438,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R617210",
-      "node_type": 11,
-      "X": 401.824,
-      "Y": 201.932,
-      "Z": 4769.438,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R62110",
-      "node_type": 11,
-      "X": 363.519,
-      "Y": 373.961,
-      "Z": 3916.333,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R62120",
-      "node_type": 11,
-      "X": 371.062,
-      "Y": 219.034,
-      "Z": 4084.338,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R62220",
-      "node_type": 11,
-      "X": 371.062,
-      "Y": -218.584,
-      "Z": 4084.338,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R623110",
-      "node_type": 11,
-      "X": 356.382,
-      "Y": 179.799,
-      "Z": 3757.381,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R623210",
-      "node_type": 11,
-      "X": 356.382,
-      "Y": -180.356,
-      "Z": 3757.381,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R62610",
-      "node_type": 11,
-      "X": 335.964,
-      "Y": 346.799,
-      "Z": 3302.66,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R62620",
-      "node_type": 11,
-      "X": 343.508,
-      "Y": 203.944,
-      "Z": 3470.666,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R62720",
-      "node_type": 11,
-      "X": 343.508,
-      "Y": -203.494,
-      "Z": 3470.666,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R628110",
-      "node_type": 11,
-      "X": 328.782,
-      "Y": 166.721,
-      "Z": 3142.703,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R628210",
-      "node_type": 11,
-      "X": 328.782,
-      "Y": -166.271,
-      "Z": 3142.703,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R645120",
-      "node_type": 11,
-      "X": 393.377,
-      "Y": -0.278,
-      "Z": 4581.312,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R648120",
-      "node_type": 11,
-      "X": 322.277,
-      "Y": -0.278,
-      "Z": 2997.836,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R650110",
-      "node_type": 11,
-      "X": 385.336,
-      "Y": 193.884,
-      "Z": 4402.24,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R650210",
-      "node_type": 11,
-      "X": 385.336,
-      "Y": -193.434,
-      "Z": 4402.24,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R651110",
-      "node_type": 11,
-      "X": 314.643,
-      "Y": -158.223,
-      "Z": 2827.819,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "R651210",
-      "node_type": 11,
-      "X": 314.643,
-      "Y": 158.673,
-      "Z": 2827.819,
-      "symmetry_type": 4
-    },
-    {
-      "node_id": "110110",
-      "node_type": 11,
-      "symmetry_type": 4,
-      "X": 429.017,
-      "Y": -428.815,
-      "Z": 5375.062
-    },
-    {
-      "node_id": "110120",
-      "node_type": 11,
-      "symmetry_type": 4,
-      "X": 802.527757,
-      "Y": -802.325757,
-      "Z": 8475.316925
-    },
-    {
-      "node_id": "110510",
+      "node_id": "F50610",
       "node_type": 12,
-      "symmetry_type": 4,
-      "X": "1110110",
-      "Y": "1110120",
-      "Z": 7341.804286
+      "X": "1501110",
+      "Y": "1501120",
+      "Z": 12058.274,
+      "symmetry_type": 4
     },
     {
-      "node_id": "110710",
+      "node_id": "F50810",
       "node_type": 12,
-      "symmetry_type": 4,
-      "X": "1110110",
-      "Y": "1110120",
-      "Z": 6317.674794
+      "X": "1501110",
+      "Y": "1501120",
+      "Z": 11084.458,
+      "symmetry_type": 4
     },
     {
-      "node_id": "110720",
+      "node_id": "R51410",
       "node_type": 12,
-      "symmetry_type": 4,
-      "X": "1110111",
-      "Y": "1110121",
-      "Z": 7341.804286
+      "X": "1501111",
+      "Y": "1501121",
+      "Z": 12613.664,
+      "symmetry_type": 4
     },
     {
-      "node_id": "110920",
+      "node_id": "R51610",
       "node_type": 12,
-      "symmetry_type": 4,
-      "X": "1110111",
-      "Y": "1110121",
-      "Z": 6317.674794
+      "X": "1501111",
+      "Y": "1501121",
+      "Z": 11695.135,
+      "symmetry_type": 4
     },
     {
-      "node_id": "70120",
+      "node_id": "R51810",
+      "node_type": 12,
+      "X": "1501111",
+      "Y": "1501121",
+      "Z": 10721.319,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R52010",
+      "node_type": 12,
+      "X": "1501111",
+      "Y": "0.628",
+      "Z": "1501113",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "601110",
       "node_type": 11,
-      "symmetry_type": 4,
-      "X": 1145.972633,
-      "Y": -1145.770633,
-      "Z": 11573.259089
+      "X": -763.73,
+      "Y": -763.73,
+      "Z": 13503.292,
+      "symmetry_type": 4
     },
     {
-      "node_id": "70410",
-      "node_type": 12,
-      "symmetry_type": 4,
-      "X": "1110120",
-      "Y": "170120",
-      "Z": 9556.532275
+      "node_id": "601120",
+      "node_type": 11,
+      "X": -855.96,
+      "Y": -855.96,
+      "Z": 15602.746,
+      "symmetry_type": 4
     },
     {
-      "node_id": "70810",
-      "node_type": 12,
-      "symmetry_type": 4,
-      "X": "1110120",
-      "Y": "170120",
-      "Z": 8506.539186
+      "node_id": "62730",
+      "node_type": 11,
+      "X": 794.371,
+      "Y": -794.371,
+      "Z": 14200.777,
+      "symmetry_type": 4
     },
     {
-      "node_id": "70610",
-      "node_type": 12,
-      "symmetry_type": 2,
-      "X": -0.0,
-      "Y": "170810",
-      "Z": "170811"
+      "node_id": "F61010",
+      "node_type": 11,
+      "X": -825.148,
+      "Y": -825.148,
+      "Z": 14901.373,
+      "symmetry_type": 4
     },
     {
-      "node_id": "70620",
-      "node_type": 12,
-      "symmetry_type": 1,
-      "X": "170810",
-      "Y": -553.595346,
-      "Z": "170812"
+      "node_id": "F61420",
+      "node_type": 11,
+      "X": -365.072,
+      "Y": -793.415,
+      "Z": 14179.005,
+      "symmetry_type": 4
     },
     {
-      "node_id": "70630",
+      "node_id": "F60820",
       "node_type": 12,
-      "symmetry_type": 4,
-      "X": "1110120",
-      "Y": "170120",
-      "Z": "170811"
+      "X": "0.389",
+      "Y": "1601110",
+      "Z": "1601111",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R62210",
+      "node_type": 12,
+      "X": "162730",
+      "Y": "0.389",
+      "Z": "162732",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R62410",
+      "node_type": 12,
+      "X": "1R62210",
+      "Y": "1601121",
+      "Z": 14881.156,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R629110",
+      "node_type": 12,
+      "X": "1601111",
+      "Y": "-383.734",
+      "Z": "1R62210",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "601_120",
+      "node_type": 11,
+      "X": -855.96,
+      "Y": -855.96,
+      "Z": 15602.746,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "70420",
+      "node_type": 11,
+      "X": -1288.649,
+      "Y": -1288.649,
+      "Z": 24127.486,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "71310",
+      "node_type": 11,
+      "X": -1220.154,
+      "Y": -1220.154,
+      "Z": 22778.025,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "71410",
+      "node_type": 11,
+      "X": -1220.154,
+      "Y": -1220.154,
+      "Z": 22778.025,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "71710",
+      "node_type": 11,
+      "X": -1153.183,
+      "Y": -1153.183,
+      "Z": 21458.57,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F71120",
+      "node_type": 12,
+      "X": "-1.579",
+      "Y": "171710",
+      "Z": "171711",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F716120",
+      "node_type": 12,
+      "X": "-769.09",
+      "Y": "171310",
+      "Z": "171311",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F72210",
+      "node_type": 12,
+      "X": "1601_120",
+      "Y": "170420",
+      "Z": 19506.628,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F72410",
+      "node_type": 12,
+      "X": "1601_120",
+      "Y": "170420",
+      "Z": 17554.687,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F72120",
+      "node_type": 12,
+      "X": "1.579",
+      "Y": "1F72210",
+      "Z": "171711",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R70110",
+      "node_type": 12,
+      "X": "171711",
+      "Y": "1.579",
+      "Z": "171713",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R735120",
+      "node_type": 12,
+      "X": "171311",
+      "Y": "-630.117",
+      "Z": "171313",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R73910",
+      "node_type": 12,
+      "X": "1601_121",
+      "Y": "170421",
+      "Z": 20482.599,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R74110",
+      "node_type": 12,
+      "X": "1601_121",
+      "Y": "170421",
+      "Z": 18530.658,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R74310",
+      "node_type": 12,
+      "X": "1601_121",
+      "Y": "170421",
+      "Z": 16578.717,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R74510",
+      "node_type": 12,
+      "X": "1601_121",
+      "Y": "1.579",
+      "Z": "1601_123",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "801110",
+      "node_type": 11,
+      "X": -1288.649,
+      "Y": -1288.649,
+      "Z": 24127.486,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "801120",
+      "node_type": 11,
+      "X": -1481.058,
+      "Y": -1481.058,
+      "Z": 28531.613,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "816110",
+      "node_type": 11,
+      "X": -1370.12,
+      "Y": -1370.12,
+      "Z": 25992.307,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "816210",
+      "node_type": 11,
+      "X": -1369.852,
+      "Y": -1369.852,
+      "Z": 25986.19,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F81010",
+      "node_type": 11,
+      "X": -1425.402,
+      "Y": -1425.402,
+      "Z": 27257.678,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F81020",
+      "node_type": 11,
+      "X": -937.1,
+      "Y": -1422.907,
+      "Z": 27200.588,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F80820",
+      "node_type": 12,
+      "X": "0.816",
+      "Y": "1816210",
+      "Z": "1816211",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F81720",
+      "node_type": 12,
+      "X": "0.816",
+      "Y": "1801110",
+      "Z": "1816111",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R82310",
+      "node_type": 12,
+      "X": "1816111",
+      "Y": "0.816",
+      "Z": "1816113",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R83010",
+      "node_type": 12,
+      "X": "1801111",
+      "Y": "1801121",
+      "Z": 25053.984,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R83210",
+      "node_type": 12,
+      "X": "1801111",
+      "Y": "0.816",
+      "Z": "1801113",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R82510",
+      "node_type": 12,
+      "X": "1R82310",
+      "Y": "1801121",
+      "Z": 27213.637,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "901110",
+      "node_type": 11,
+      "X": -1481.058,
+      "Y": -1481.058,
+      "Z": 28531.613,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "901120",
+      "node_type": 11,
+      "X": -1881.954,
+      "Y": -1881.954,
+      "Z": 37657.373,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "91410",
+      "node_type": 11,
+      "X": -1735.182,
+      "Y": -1735.182,
+      "Z": 34316.331,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F91010",
+      "node_type": 11,
+      "X": -1808.308,
+      "Y": -1808.308,
+      "Z": 35980.937,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F91020",
+      "node_type": 11,
+      "X": -1191.419,
+      "Y": -1805.487,
+      "Z": 35916.719,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F90820",
+      "node_type": 12,
+      "X": "1.69",
+      "Y": "191410",
+      "Z": "191411",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F91810",
+      "node_type": 12,
+      "X": "1901110",
+      "Y": "1901120",
+      "Z": 33229.689,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F92010",
+      "node_type": 12,
+      "X": "1901110",
+      "Y": "1901120",
+      "Z": 30880.651,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R92710",
+      "node_type": 12,
+      "X": "191411",
+      "Y": "1.69",
+      "Z": "191413",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R93610",
+      "node_type": 12,
+      "X": "1901113",
+      "Y": "1901123",
+      "Z": 32357.672,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R93810",
+      "node_type": 12,
+      "X": "1901113",
+      "Y": "1901123",
+      "Z": 30008.634,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R94010",
+      "node_type": 12,
+      "X": "1901111",
+      "Y": "1.69",
+      "Z": "1901113",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R92910",
+      "node_type": 12,
+      "X": "1R92710",
+      "Y": "1901121",
+      "Z": 35933.618,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R93510",
+      "node_type": 12,
+      "X": "1R93612",
+      "Y": "-1.69",
+      "Z": "191413",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "1001110",
+      "node_type": 11,
+      "X": -1881.954,
+      "Y": -1881.954,
+      "Z": 37657.373,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "1001120",
+      "node_type": 11,
+      "X": -2295.945,
+      "Y": -2295.945,
+      "Z": 47081.207,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "101810",
+      "node_type": 11,
+      "X": -2086.496,
+      "Y": -2086.496,
+      "Z": 42313.445,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "103530",
+      "node_type": 11,
+      "X": 2225.107,
+      "Y": -2225.107,
+      "Z": 45468.684,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F101020",
+      "node_type": 11,
+      "X": -1984.24,
+      "Y": -2223.42,
+      "Z": 45430.291,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F1013110",
+      "node_type": 11,
+      "X": -2156.875,
+      "Y": -2156.875,
+      "Z": 43915.497,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F101420",
+      "node_type": 11,
+      "X": -954.599,
+      "Y": -2152.122,
+      "Z": 43807.297,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F102410",
+      "node_type": 11,
+      "X": -1983.919,
+      "Y": -1983.919,
+      "Z": 39978.429,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F102420",
+      "node_type": 11,
+      "X": -1373.436,
+      "Y": -2032.524,
+      "Z": 41084.856,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F1026120",
+      "node_type": 11,
+      "X": -1272.217,
+      "Y": -1930.713,
+      "Z": 38767.291,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F100820",
+      "node_type": 12,
+      "X": "1.745",
+      "Y": "1101810",
+      "Z": "1101811",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "F102220",
+      "node_type": 12,
+      "X": "11001110",
+      "Y": "1101811",
+      "Z": 39870.229,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R103310",
+      "node_type": 12,
+      "X": "1101811",
+      "Y": "1.745",
+      "Z": "1101813",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R1037120",
+      "node_type": 12,
+      "X": "1103530",
+      "Y": "-1495.597",
+      "Z": "1103532",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R104310",
+      "node_type": 12,
+      "X": "11001111",
+      "Y": "11001121",
+      "Z": 41137.211,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R104510",
+      "node_type": 12,
+      "X": "11001111",
+      "Y": "11001121",
+      "Z": 38816.156,
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R104710",
+      "node_type": 12,
+      "X": "11001111",
+      "Y": "1.745",
+      "Z": "11001113",
+      "symmetry_type": 4
+    },
+    {
+      "node_id": "R103810",
+      "node_type": 12,
+      "X": "1R103310",
+      "Y": "11001121",
+      "Z": 43835.22,
+      "symmetry_type": 4
     }
   ],
   "pinjie": [
     [
-      "50210",
+      "201110",
       [
-        -187.5,
-        -187.29765886287626,
-        0.0
+        -289.8030980746885,
+        -289.80309807468825,
+        2693.0
       ]
     ],
     [
-      "50211",
+      "201111",
       [
-        187.5,
-        -187.29765886287626,
-        0.0
+        289.8030980746885,
+        -289.80309807468825,
+        2693.0
       ]
     ],
     [
-      "51410",
+      "401110",
       [
-        -201.19175027870688,
-        -200.98940914158305,
-        304.5
+        -438.26320604928026,
+        -438.26320604928037,
+        6072.325263429128
       ]
     ],
     [
-      "51411",
+      "401111",
       [
-        201.19175027870688,
-        -200.98940914158305,
-        304.5
+        438.2632060492807,
+        -438.26320604928037,
+        6072.325263429128
       ]
     ],
     [
-      "50910",
+      "501110",
       [
-        -241.77238944630244,
-        -241.57004830917876,
-        1207.0
+        -614.6905534900025,
+        -614.6905534900029,
+        10110.6422389349
       ]
     ],
     [
-      "50911",
+      "501111",
       [
-        241.77238944630244,
-        -241.57004830917876,
-        1207.0
+        614.6905534900036,
+        -614.6905534900029,
+        10110.6422389349
       ]
     ],
     [
-      "50710",
+      "601110",
       [
-        -255.46413972500932,
-        -255.26179858788555,
-        1511.5
+        -763.73036129823,
+        -763.7303612982305,
+        13503.291710154801
       ]
     ],
     [
-      "50711",
+      "601111",
       [
-        255.46413972500932,
-        -255.26179858788555,
-        1511.5
+        763.7303612982312,
+        -763.7303612982305,
+        13503.291710154801
       ]
     ],
     [
-      "50220",
+      "601_120",
       [
-        -308.5,
-        -308.29765886287623,
-        2691.0
+        -855.9598369229047,
+        -855.9598369229047,
+        15602.74611975493
       ]
     ],
     [
-      "50221",
+      "601_121",
       [
-        308.5,
-        -308.29765886287623,
-        2691.0
+        855.959836922905,
+        -855.9598369229047,
+        15602.74611975493
       ]
     ],
     [
-      "61210",
+      "71710",
       [
-        -323.4968771772787,
-        -323.2945360401549,
-        3024.998693379288
+        -1153.1829102898728,
+        -1153.1829102898723,
+        21458.56961066447
       ]
     ],
     [
-      "61211",
+      "71711",
       [
-        323.49687717727875,
-        -323.2945360401549,
-        3024.998693379288
+        1153.1829102898716,
+        -1153.1829102898723,
+        21458.56961066447
       ]
     ],
     [
-      "60710",
+      "71310",
       [
-        -377.92831392011254,
-        -377.72597278298855,
-        4237.252987120378
+        -1220.154290494323,
+        -1220.1542904943226,
+        22778.0249846275
       ]
     ],
     [
-      "60711",
+      "71311",
       [
-        377.9283139201119,
-        -377.72597278298855,
-        4237.252987120378
+        1220.1542904943224,
+        -1220.1542904943226,
+        22778.0249846275
       ]
     ],
     [
-      "60510",
+      "71410",
       [
-        -393.7834461165727,
-        -393.5811049794488,
-        4590.366063554504
+        -1220.154290494323,
+        -1220.1542904943226,
+        22778.0249846275
       ]
     ],
     [
-      "60511",
+      "71411",
       [
-        393.78344611657224,
-        -393.5811049794488,
-        4590.366063554504
+        1220.1542904943224,
+        -1220.1542904943226,
+        22778.0249846275
+      ]
+    ],
+    [
+      "801110",
+      [
+        -1288.6486583994135,
+        -1288.6486583994129,
+        24127.485926639958
+      ]
+    ],
+    [
+      "801111",
+      [
+        1288.6486583994122,
+        -1288.6486583994129,
+        24127.485926639958
+      ]
+    ],
+    [
+      "901110",
+      [
+        -1481.0576190390234,
+        -1481.0576190390227,
+        28531.612516206376
+      ]
+    ],
+    [
+      "901111",
+      [
+        1481.0576190390225,
+        -1481.0576190390227,
+        28531.612516206376
+      ]
+    ],
+    [
+      "91410",
+      [
+        -1735.1815178366726,
+        -1735.181517836672,
+        34316.33086467294
+      ]
+    ],
+    [
+      "91411",
+      [
+        1735.1815178366714,
+        -1735.181517836672,
+        34316.33086467294
+      ]
+    ],
+    [
+      "1001110",
+      [
+        -1881.9542166163847,
+        -1881.9542166163833,
+        37657.373276276325
+      ]
+    ],
+    [
+      "1001111",
+      [
+        1881.9542166163826,
+        -1881.9542166163833,
+        37657.373276276325
+      ]
+    ],
+    [
+      "101810",
+      [
+        -2086.496429796078,
+        -2086.4964297960773,
+        42313.44497679235
+      ]
+    ],
+    [
+      "101811",
+      [
+        2086.496429796077,
+        -2086.4964297960773,
+        42313.44497679235
       ]
     ]
   ]

@@ -1,7 +1,9 @@
 import xintrans
 import tower_body_reconstruction
+import t7833_pinjie
 import pandas as pd
 import os
+import json
 
 def normalize_node_ids(nodes, members):
     # 步骤1：收集所有现有节点标识（去掉最后一位）
@@ -126,7 +128,22 @@ def tran2dto3d(danjia_dir,tashen_dir,project_path,savepath_ui,drawing_type):
 
 
     ganjian_tashen, jiedian_tashen, pinjie_tashen = tower_body_reconstruction.build_tower_body(tashen_dir)
-    jiedian_danjia,ganjian_danjia= xintrans.work(danjia_dir, pinjie_tashen,drawing_type)
+
+    # T7833/7837 拼接点识别逻辑与其他图纸不同：改由担架一类杆件端点匹配塔身正视图横杆，
+    # 再从塔身 jiedian/ganjian 取连接点。仅这两类图纸替换 pinjie，其他图纸沿用塔身自带的 pinjie。
+    # 差异：T7833 所有担架取左端、编号小=上杆；7837 担架朝向相反——
+    # 1号担架(01.txt)取右端、2号担架(02.txt)取左端，且编号小=下杆（swap_updown）。
+    if drawing_type == "T7833":
+        pinjie_tashen = t7833_pinjie.build_pinjie_for_t7833(
+            danjia_dir, tashen_dir, jiedian_tashen, ganjian_tashen
+        )
+    elif drawing_type == "7837":
+        pinjie_tashen = t7833_pinjie.build_pinjie_for_t7833(
+            danjia_dir, tashen_dir, jiedian_tashen, ganjian_tashen,
+            end_side_by_index={0: "right", 1: "left"}, swap_updown=True
+        )
+
+    jiedian_danjia,ganjian_danjia= xintrans.work(danjia_dir, pinjie_tashen,drawing_type, tashen_dir)
     jiedian=jiedian_danjia+jiedian_tashen
     jiedian = format_xyz_coordinates(jiedian)
     savepath=os.path.join(project_path, "3d_result")
@@ -139,6 +156,23 @@ def tran2dto3d(danjia_dir,tashen_dir,project_path,savepath_ui,drawing_type):
 
     create_excel_pandas(jiedian, ganjian, os.path.join(savepath, 'chushi_data.xlsx'))
     create_excel_pandas(jiedian, ganjian, os.path.join(savepath_ui, 'chushi_data.xlsx'))
+
+    # Keep the JSON visualizer synchronized with the same pre-normalization
+    # model written to chushi_data.xlsx. Otherwise draw_tower_json_3d.py can
+    # silently render a stale model from an earlier run.
+    tower_output_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'tower_output.json')
+    with open(tower_output_path, 'w', encoding='utf-8') as output_file:
+        json.dump(
+            {
+                'ganjian': ganjian,
+                'jiedian': jiedian,
+                'pinjie': pinjie_tashen,
+            },
+            output_file,
+            ensure_ascii=False,
+            indent=2,
+        )
+
     jiedian, ganjian, mapping = normalize_node_ids(jiedian, ganjian)
     create_excel_pandas(jiedian, ganjian, os.path.join(savepath, 'zhenghe_data.xlsx'))
     create_excel_pandas(jiedian, ganjian, os.path.join(savepath_ui, 'zhenghe_data.xlsx'))

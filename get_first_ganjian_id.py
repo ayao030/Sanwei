@@ -74,7 +74,7 @@ def detect_main_rods_enhanced(coordinates_data, top_k=2):
 
 if __name__ == "__main__":
     #dir_path = r"D:\Sanwei\zuobiao\DanJia\1E2-SDJ"  # 保留目录路径
-    dir_path = r"D:\Sanwei\zuobiao\DanJia\J1"
+    dir_path = r"D:\Sanwei\DanJia"
     for i in range(1, 5):
         file_path = f"{dir_path}\\0{i}.txt"  # 每次生成新的完整路径
         with open(file_path, 'r', encoding='utf-8') as f:

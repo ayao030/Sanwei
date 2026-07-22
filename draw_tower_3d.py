@@ -336,13 +336,49 @@ def load_rods_from_excel(excel_path, sheet_index=1):
 
     return rods
 
-def plot_3d_rods(expanded_nodes, rods):
+def plot_3d_rods(expanded_nodes, rods, show_rod_ids=False, rod_label_filter=None):
     """
     在三维空间中绘制杆件（直线）
     同时统计并输出丢失杆件及缺失端点信息
     """
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111, projection='3d')
+
+    def _rod_in_drawing(rod_id, drawing_no):
+        try:
+            rid = int(rod_id)
+        except (TypeError, ValueError):
+            return False
+        base = int(drawing_no) * 100
+        return base <= rid < base + 100
+
+    def _print_rod_height_summary(drawings=(7, 11)):
+        summary = {}
+        for drawing_no in drawings:
+            matched = [
+                rod for rod in rods
+                if _rod_in_drawing(rod.get("rod_id"), drawing_no)
+            ]
+            z_values = []
+            missing = 0
+            for rod in matched:
+                for endpoint in ("start", "end"):
+                    node = expanded_nodes.get(rod[endpoint])
+                    if node is None:
+                        missing += 1
+                    else:
+                        z_values.append(node["z"])
+            if z_values:
+                summary[drawing_no] = (min(z_values), max(z_values), len(matched), missing)
+                print(
+                    f"[height-check] 图纸{drawing_no}: 杆件={len(matched)}, "
+                    f"Z={min(z_values):.3f}~{max(z_values):.3f}, 缺失端点={missing}"
+                )
+            else:
+                print(f"[height-check] 图纸{drawing_no}: 未找到可绘制杆件")
+        return summary
+
+    height_summary = _print_rod_height_summary()
 
     # ===============================
     # 1. 绘制节点（淡色）
@@ -390,13 +426,42 @@ def plot_3d_rods(expanded_nodes, rods):
             linewidth=1
         )
 
+        if show_rod_ids:
+            rod_id = rod.get("rod_id")
+            if rod_label_filter is None or rod_id in rod_label_filter:
+                mid_x = (A["x"] + B["x"]) / 2
+                mid_y = (A["y"] + B["y"]) / 2
+                mid_z = (A["z"] + B["z"]) / 2
+                ax.text(
+                    mid_x,
+                    mid_y,
+                    mid_z,
+                    str(rod_id),
+                    fontsize=7,
+                    color="red",
+                )
+
     # ===============================
     # 3. 坐标 & 显示
     # ===============================
     ax.set_xlabel("X")
     ax.set_ylabel("Y")
     ax.set_zlabel("Z")
-    ax.set_title("3D Rod Structure")
+    try:
+        ax.set_proj_type("ortho")
+    except Exception:
+        pass
+    ax.view_init(elev=0, azim=-90)
+
+    title = "3D Rod Structure"
+    if 7 in height_summary and 11 in height_summary:
+        z7 = height_summary[7]
+        z11 = height_summary[11]
+        title = (
+            f"3D Rod Structure | 7: {z7[0]:.1f}-{z7[1]:.1f} "
+            f"| 11: {z11[0]:.1f}-{z11[1]:.1f}"
+        )
+    ax.set_title(title)
 
     # ===============================
     # ✅ 自动根据数据扩大三维显示范围（关键）
@@ -617,5 +682,10 @@ if __name__ == "__main__":
     print("对称展开后杆件数量：", len(expanded_rods))
 
 
-    plot_3d_rods(expanded_nodes, expanded_rods)
+    plot_3d_rods(
+        expanded_nodes,
+        expanded_rods,
+        show_rod_ids=False,
+        # rod_label_filter={701, 702, 703,101, 102, 103, 108,117,113,114,201, 203, 202, 301, 302, 303, 401, 402,406,501, 502, 503, 601, 602,607,801,802,901,902},
+    )
 

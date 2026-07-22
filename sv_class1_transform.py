@@ -1,28 +1,102 @@
 import math
 import io_utils as rw
 
-# ================= 三维转换相关子函数 =================
+def segment_length(p1, p2):
+    return math.hypot(float(p1[0]) - float(p2[0]), float(p1[1]) - float(p2[1]))
 
-# 提取一类杆件（仅保留后缀 01 / 02）
-def extract_target_members(lines_dict):
-    target_members = {}
-    for member_id, coordinates in lines_dict.items():
-        member_str = str(member_id)
-        if "_" in member_str:
-            int_part = member_str.split("_", 1)[0]
-        else:
-            int_part = member_str
-        end_suffix = int_part[-2:] if len(int_part) >= 2 else ""
-        if end_suffix in ["01", "02"]:
-            target_members[member_id] = coordinates
-    return target_members
 
+def _numeric_id(member_id):
+    try:
+        return int(str(member_id))
+    except (TypeError, ValueError):
+        return float("inf")
+
+
+def _member_sort_key(member_id):
+    num_id = _numeric_id(member_id)
+    if num_id == float("inf"):
+        return (1, str(member_id))
+    return (0, num_id)
+
+
+def _is_main_rod_candidate(member_id):
+    """Return whether the base drawing ID is eligible to be a class-1 rod."""
+    raw_id = str(member_id).strip()
+    base_id, separator, instance = raw_id.rpartition("_")
+    if separator and instance.isdigit():
+        raw_id = base_id
+    return raw_id.endswith(("01", "02", "03"))
+
+
+def detect_main_rods_enhanced(coordinates_data, top_k=2):
+    """
+    Detect class-1/main rods among IDs ending in 01, 02, or 03.
+
+    The eligible candidates are ranked by length first, then fall back to the
+    smallest eligible IDs. Duplicate-instance suffixes such as ``_1`` are
+    ignored only when evaluating the drawing ID suffix.
+    """
+    if len(coordinates_data) < top_k:
+        return []
+
+    rod_items = []
+    all_ids = []
+    for rod_id, endpoints in coordinates_data.items():
+        if (
+            not _is_main_rod_candidate(rod_id)
+            or not isinstance(endpoints, (list, tuple))
+            or len(endpoints) != 2
+        ):
+            continue
+        num_id = _numeric_id(rod_id)
+        all_ids.append((rod_id, num_id))
+        p1, p2 = endpoints
+        rod_items.append((rod_id, num_id, segment_length(p1, p2)))
+
+    if len(rod_items) < top_k:
+        return []
+
+    rod_items.sort(key=lambda item: item[2], reverse=True)
+    candidates = [item[0] for item in rod_items[:top_k]]
+
+    all_ids.sort(key=lambda item: (item[1], str(item[0])))
+    min_two_ids = [item[0] for item in all_ids[:top_k]]
+    if len(min_two_ids) < top_k:
+        return []
+
+    candidates_set = set(candidates)
+    min_two_set = set(min_two_ids)
+    min_one = min_two_ids[0]
+
+    if candidates_set == min_two_set:
+        result = min_two_ids
+    elif min_one in candidates_set:
+        result = candidates
+    else:
+        result = min_two_ids
+
+    return sorted(result, key=_member_sort_key)
+
+
+def extract_target_members(lines_dict, main_rod_ids=None):
+    target_ids = main_rod_ids or detect_main_rods_enhanced(lines_dict)
+    return {member_id: lines_dict[member_id] for member_id in target_ids if member_id in lines_dict}
 
 # 一类杆件所需参数读取
 def parameter_extract(lines_dict):
     lines = list(lines_dict.values())
-    if len(lines) < 2:
-        raise ValueError("提取一类杆件失败：需要至少两条杆件用于参数计算。")
+    # if len(lines) < 2:
+    #     raise ValueError("提取一类杆件失败：需要至少两条杆件用于参数计算。")
+    if len(lines) < 1:
+        raise ValueError("提取一类杆件失败：需要至少一条杆件用于参数计算。")
+
+    # 如果只有一条杆件，对称它以获得完整的参数
+    if len(lines) == 1:
+        line = lines[0]
+        (x1, y1), (x2, y2) = line
+        # 添加关于Y轴对称的杆件
+        symmetric_line = ((-x1, y1), (-x2, y2))
+        lines = [line, symmetric_line]
 
     kb_list = []
     for line in lines:
@@ -92,8 +166,8 @@ def single_view_trans01(lines_dict, h, a, b):
 
 
 # 一类杆件坐标总转换
-def translate_single_front_3d_coordinates01(lines_dict):
-    line_extracted = extract_target_members(lines_dict)
+def translate_single_front_3d_coordinates01(lines_dict, main_rod_ids=None):
+    line_extracted = extract_target_members(lines_dict, main_rod_ids)
     if not line_extracted:
         return {}
     h, a, b = parameter_extract(line_extracted)
@@ -138,8 +212,8 @@ def convert_node_format(original_data):
 
 # ================= 总函数 =================
 
-def single_view01(line_coord):
-    res_lines = translate_single_front_3d_coordinates01(line_coord)
+def single_view01(line_coord, main_rod_ids=None):
+    res_lines = translate_single_front_3d_coordinates01(line_coord, main_rod_ids)
     ganjian = convert_member_format(res_lines)
     jiedian = convert_node_format(res_lines)
     return ganjian, jiedian

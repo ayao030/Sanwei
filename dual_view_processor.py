@@ -1,6 +1,7 @@
 # main.py
 import os, glob, json
-from typing import Dict, List, Tuple, Optional, cast
+import re
+from typing import Dict, List, Tuple, Optional, cast, Any
 import math
 import statistics
 
@@ -15,6 +16,7 @@ from dual_view_core import (
     generate_outputs, scale_by_member,
     build_vertical_reuse_aliases, apply_id_aliases,
     drop_vertical_members,  # 原有
+    remap_vertical_coordinates,
 )
 
 # ====== 拼接与定标开关 ======
@@ -242,6 +244,101 @@ def _pairs_to_dict(pairs: List[_XPair]) -> Dict[str, List[Coord]]:
         out[p.idB] = [p.topR, p.botL]
     return out
 
+
+def _point_to_segment_distance(p: Coord, a: Coord, b: Coord) -> float:
+    x0, y0 = p
+    x1, y1 = a
+    x2, y2 = b
+    dx = x2 - x1
+    dy = y2 - y1
+    l2 = dx * dx + dy * dy
+    if l2 <= 1e-12:
+        return math.hypot(x0 - x1, y0 - y1)
+    t = max(0.0, min(1.0, ((x0 - x1) * dx + (y0 - y1) * dy) / l2))
+    px = x1 + t * dx
+    py = y1 + t * dy
+    return math.hypot(x0 - px, y0 - py)
+
+
+def _classify_reference_tiers(
+    all_members: CoordDict,
+    class1_members: CoordDict,
+    tolerance: float = 35.0,
+) -> Dict[str, Any]:
+    """
+    Classify rods with the same topology rule used by the single-view path.
+
+    The existing dual-view visual categories are left untouched. This helper
+    only records which host rod each endpoint is attached to so final node
+    export can decide between real coordinates and reference coordinates.
+    """
+    tier1 = {str(k): v for k, v in (class1_members or {}).items()}
+    remaining = {
+        str(k): v for k, v in (all_members or {}).items()
+        if str(k) not in tier1
+    }
+
+    def find_host(pt: Coord, host_dict: CoordDict) -> Optional[str]:
+        best_d = float("inf")
+        best_k: Optional[str] = None
+        for host_key, seg in (host_dict or {}).items():
+            if not seg or len(seg) < 2:
+                continue
+            d = _point_to_segment_distance(pt, seg[0], seg[1])
+            if d < best_d:
+                best_d = d
+                best_k = str(host_key)
+        return best_k if best_d <= tolerance else None
+
+    tier2: CoordDict = {}
+    tier3: CoordDict = {}
+    endpoint_hosts: Dict[str, List[Optional[Dict[str, str]]]] = {}
+
+    for member_id, seg in list(remaining.items()):
+        if not seg or len(seg) < 2:
+            continue
+        h1 = find_host(seg[0], tier1)
+        h2 = find_host(seg[1], tier1)
+        if h1 and h2:
+            tier2[member_id] = seg
+            endpoint_hosts[member_id] = [
+                {"kind": "tier1", "host": h1},
+                {"kind": "tier1", "host": h2},
+            ]
+            del remaining[member_id]
+
+    for member_id, seg in list(remaining.items()):
+        if not seg or len(seg) < 2:
+            continue
+        h1_t1 = find_host(seg[0], tier1)
+        h2_t1 = find_host(seg[1], tier1)
+        h1_t2 = find_host(seg[0], tier2) if not h1_t1 else None
+        h2_t2 = find_host(seg[1], tier2) if not h2_t1 else None
+
+        if h1_t1 and h2_t1:
+            continue
+
+        host1 = (
+            {"kind": "tier1", "host": h1_t1} if h1_t1
+            else {"kind": "tier2", "host": h1_t2} if h1_t2
+            else None
+        )
+        host2 = (
+            {"kind": "tier1", "host": h2_t1} if h2_t1
+            else {"kind": "tier2", "host": h2_t2} if h2_t2
+            else None
+        )
+        if host1 and host2:
+            tier3[member_id] = seg
+            endpoint_hosts[member_id] = [host1, host2]
+
+    return {
+        "tier1": set(tier1.keys()),
+        "tier2": set(tier2.keys()),
+        "tier3": set(tier3.keys()),
+        "endpoint_hosts": endpoint_hosts,
+    }
+
 # def _fix_xmembers(front_x: CoordDict, right_x: CoordDict,
 #                   front_support: CoordDict, right_support: CoordDict,
 #                   front_horizontal: CoordDict, right_horizontal: CoordDict,
@@ -301,7 +398,7 @@ def _fix_xmembers(front_x: CoordDict, right_x: CoordDict,
     废除所有 2D 阶段的强制对齐（_hard_snap）、相邻捏合（_snap_adjacent）和跨视图高度配对（_match_pairs）。
     因为这些操作会严重扭曲 CAD 原始坐标，导致连续 X 型或不规则 K/V 型杆件在 3D 重建前就损坏或丢失。
     我们只负责：
-    1. 把 \ 和 / 组合成 X 型对（fpairs / rpairs），并适度放宽重叠要求。
+    1. 把 \\ 和 / 组合成 X 型对（fpairs / rpairs），并适度放宽重叠要求。
     2. 原封不动地输出它们的 2D 坐标。
     3. 把没有配对成功的单根斜材也保留下来，防止漏杆件。
     真正的对齐和缝合，将由 generate_outputs 在 3D 空间中通过 _closest_id 完美完成。
@@ -334,13 +431,21 @@ def _fix_xmembers(front_x: CoordDict, right_x: CoordDict,
 
 
 
+def _drawing_sort_key(value):
+    """Natural order for drawing names like 07.txt, J1-7.txt, J1-11.txt."""
+    stem = os.path.splitext(os.path.basename(str(value)))[0]
+    parts = re.split(r"(\d+)", stem)
+    key = tuple((0, int(part)) if part.isdigit() else (1, part.lower()) for part in parts)
+    return key, stem.lower()
+
+
 # ======================================================================
 # ========================= 主要功能函数 ===============================
 # ======================================================================
 def main(data_dir: str):
     print(f"开始处理，数据文件夹路径: {data_dir}")
 
-    txts = sorted(glob.glob(os.path.join(data_dir, "*.txt")))
+    txts = sorted(glob.glob(os.path.join(data_dir, "*.txt")), key=_drawing_sort_key)
     if not txts:
         print("错误: 目录下没有找到 .txt 数据文件")
         return [], [], []
@@ -365,7 +470,7 @@ def main(data_dir: str):
 
     all_models_data = {}
     if two_view_files:
-        print("\\n" + "#" * 60)
+        print("\n" + "#" * 60)
         print("## 步骤 2: 开始处理双视图文件...")
         print("#" * 60)
         for fp in two_view_files:
@@ -377,9 +482,32 @@ def main(data_dir: str):
             front_raw = clean_view(front_raw, "正面")
             right_raw = clean_view(right_raw, "右侧面")
 
-            H_TOL = 1.0
+            front_raw_for_tiers = dict(front_raw)
+            right_raw_for_tiers = dict(right_raw)
+
+            # CAD horizontal members often carry a few drawing-unit Y offset.
+            # Scale the tolerance to this drawing while keeping it below the
+            # range where diagonal members could be classified as horizontal.
+            all_y_values = [
+                point[1]
+                for view in (front_raw, right_raw)
+                for segment in view.values()
+                for point in segment
+            ]
+            vertical_span = max(all_y_values) - min(all_y_values) if all_y_values else 0.0
+            H_TOL = min(25.0, max(10.0, vertical_span * 0.005))
             front_support = find_supports(front_raw)
             right_support = find_supports(right_raw)
+            if len(front_support) < 2 or len(right_support) < 2:
+                print(
+                    "  - 错误：主杆识别不足，无法建立双视图基座，跳过。"
+                    f"（正面={len(front_support)}, 侧面={len(right_support)}）"
+                )
+                continue
+            # Keep the unmodified CAD legs so secondary endpoints can later
+            # be matched to their original host before the legs are refitted.
+            front_source_support = dict(front_support)
+            right_source_support = dict(right_support)
 
             front_horizontal = find_horizontals(
                 {k: v for k, v in front_raw.items() if k not in front_support},
@@ -399,10 +527,36 @@ def main(data_dir: str):
             front_support, front_horizontal = enforce_symmetry(front_support, front_horizontal)
             right_support, right_horizontal = enforce_symmetry(right_support, right_horizontal)
 
+            def _support_height_span(supports):
+                values = [point[1] for segment in supports.values() for point in segment]
+                if len(values) < 2:
+                    return None
+                low, high = min(values), max(values)
+                return (low, high) if high - low >= 1e-9 else None
+
+            # Keep each view's CAD height basis for horizontal pairing.  The
+            # following slope-matching step intentionally changes both support
+            # extents, so deriving relative levels afterwards is incorrect.
+            front_height_span = _support_height_span(front_support)
+            right_height_span = _support_height_span(right_support)
+
             front_support, right_support = match_support_slopes(front_support, right_support)
 
             f_models = build_support_models(front_support)
             r_models = build_support_models(right_support)
+
+            def _model_height_span(models):
+                values = [value for model in models for value in (model.ymin, model.ymax)]
+                if len(values) < 2:
+                    return None
+                low, high = min(values), max(values)
+                return (low, high) if high - low >= 1e-9 else None
+
+            model_spans = [span for span in (_model_height_span(f_models), _model_height_span(r_models)) if span]
+            canonical_height_span = (
+                min(span[0] for span in model_spans),
+                max(span[1] for span in model_spans),
+            ) if model_spans else None
 
             plan = plan_top_span(f_models, r_models, front_horizontal, right_horizontal)
             if plan:
@@ -419,11 +573,28 @@ def main(data_dir: str):
             f_models = build_support_models(front_support)
             r_models = build_support_models(right_support)
 
+            # plan_top_span() may extend the support endpoints, so refresh
+            # the common target range from the geometry that will actually be
+            # used for reconstruction.
+            model_spans = [span for span in (_model_height_span(f_models), _model_height_span(r_models)) if span]
+            canonical_height_span = (
+                min(span[0] for span in model_spans),
+                max(span[1] for span in model_spans),
+            ) if model_spans else None
+
             skip_f = {plan["front_top_key"]} if plan and plan.get("front_top_key") else set()
             skip_r = {plan["right_top_key"]} if plan and plan.get("right_top_key") else set()
 
             front_horizontal, right_horizontal = correct_horizontals(
-                f_models, r_models, front_horizontal, right_horizontal, skip_f, skip_r
+                f_models,
+                r_models,
+                front_horizontal,
+                right_horizontal,
+                skip_f,
+                skip_r,
+                front_height_span=front_height_span,
+                right_height_span=right_height_span,
+                target_height_span=canonical_height_span,
             )
 
             front_support = align_to_top(front_support, front_horizontal)
@@ -514,12 +685,14 @@ def main(data_dir: str):
 
             f_fixed: CoordDict = {}
             r_fixed: CoordDict = {}
-            front_sup_final2d: CoordDict = {}
-            right_sup_final2d: CoordDict = {}
-            front_horiz_final2d: CoordDict = {}
-            right_horiz_final2d: CoordDict = {}
+            front_sup_final2d: CoordDict = dict(front_support)
+            right_sup_final2d: CoordDict = dict(right_support)
+            front_horiz_final2d: CoordDict = dict(front_horizontal)
+            right_horiz_final2d: CoordDict = dict(right_horizontal)
             front_x_final2d: CoordDict = {}
             right_x_final2d: CoordDict = {}
+            front_remaining: CoordDict = {}
+            right_remaining: CoordDict = {}
             kept: Dict[str, CoordDict] = {}
             pending3d_2dpack: Dict[str, Dict[str, CoordDict]] = {}
             if front_x_type or right_x_type:
@@ -543,11 +716,6 @@ def main(data_dir: str):
                     print(f"  - 在对X型杆件复位时遇到异常：{e}")
                     f_fixed, r_fixed = {}, {}
 
-                # ... 保持后面的字典更新逻辑不变 ...
-                front_sup_final2d = dict(front_support)
-                right_sup_final2d = dict(right_support)
-                front_horiz_final2d = dict(front_horizontal)
-                right_horiz_final2d = dict(right_horizontal)
                 front_x_final2d = dict(f_fixed)
                 right_x_final2d = dict(r_fixed)
             # if front_x_type or right_x_type:
@@ -586,59 +754,83 @@ def main(data_dir: str):
             #     front_x_final2d = dict(f_fixed)
             #     right_x_final2d = dict(r_fixed)
 
-                def _remaining(raw_dict, a, b, c):
-                    keys = set(raw_dict.keys()) - set(a.keys()) - set(b.keys()) - set(c.keys())
-                    return {k: raw_dict[k] for k in keys if k in raw_dict}
+            def _remaining(raw_dict, a, b, c):
+                keys = set(raw_dict.keys()) - set(a.keys()) - set(b.keys()) - set(c.keys())
+                return {k: raw_dict[k] for k in keys if k in raw_dict}
 
-                try:
-                    front_remaining = _remaining(front_raw, front_sup_final2d, front_horiz_final2d, front_x_final2d)
-                    right_remaining = _remaining(right_raw, right_sup_final2d, right_horiz_final2d, right_x_final2d)
+            try:
+                front_remaining = _remaining(front_raw, front_sup_final2d, front_horiz_final2d, front_x_final2d)
+                right_remaining = _remaining(right_raw, right_sup_final2d, right_horiz_final2d, right_x_final2d)
 
-                    kept = {
-                        "front_raw": front_remaining,
-                        "right_raw": right_remaining,
-                        "front_support": front_sup_final2d,
-                        "right_support": right_sup_final2d,
-                        "front_horizontal": front_horiz_final2d,
-                        "right_horizontal": right_horiz_final2d,
-                        "front_xmembers": front_x_final2d,
-                        "right_xmembers": right_x_final2d,
-                    }
+                kept = {
+                    "front_raw": front_remaining,
+                    "right_raw": right_remaining,
+                    "front_support": front_sup_final2d,
+                    "right_support": right_sup_final2d,
+                    "front_horizontal": front_horiz_final2d,
+                    "right_horizontal": right_horiz_final2d,
+                    "front_xmembers": front_x_final2d,
+                    "right_xmembers": right_x_final2d,
+                }
 
-                    pending3d_2dpack = {
-                        "front": {
-                            "support": front_sup_final2d,
-                            "horizontal": front_horiz_final2d,
-                            "xmembers": front_x_final2d,
-                        },
-                        "right": {
-                            "support": right_sup_final2d,
-                            "horizontal": right_horiz_final2d,
-                            "xmembers": right_x_final2d,
-                        },
-                    }
+                pending3d_2dpack = {
+                    "front": {
+                        "support": front_sup_final2d,
+                        "horizontal": front_horiz_final2d,
+                        "xmembers": front_x_final2d,
+                    },
+                    "right": {
+                        "support": right_sup_final2d,
+                        "horizontal": right_horiz_final2d,
+                        "xmembers": right_x_final2d,
+                    },
+                }
 
-                    print("  - 数据保留摘要：")
-                    print(f"    原始(剩余) 正面/侧面: {len(front_remaining)}/{len(right_remaining)}")
-                    print(f"    支撑 正面/侧面: {len(front_sup_final2d)}/{len(right_sup_final2d)}")
-                    print(f"    横向 正面/侧面: {len(front_horiz_final2d)}/{len(right_horiz_final2d)}")
-                    print(f"    X型  正面/侧面: {len(front_x_final2d)}/{len(right_x_final2d)}")
+                print("  - 数据保留摘要：")
+                print(f"    原始(剩余) 正面/侧面: {len(front_remaining)}/{len(right_remaining)}")
+                print(f"    支撑 正面/侧面: {len(front_sup_final2d)}/{len(right_sup_final2d)}")
+                print(f"    横向 正面/侧面: {len(front_horiz_final2d)}/{len(right_horiz_final2d)}")
+                print(f"    X型  正面/侧面: {len(front_x_final2d)}/{len(right_x_final2d)}")
 
-                except Exception as e:
-                    print(f"  - [警告] 数据保留结构构建失败：{e}")
-                    kept = {}
-                    pending3d_2dpack = {}
+            except Exception as e:
+                print(f"  - [警告] 数据保留结构构建失败：{e}")
+                kept = {}
+                pending3d_2dpack = {}
 
             # class2_front = dict(f_fixed)
             # class2_right = dict(r_fixed)
                         # === 核心修复：拯救被丢弃的 K型/V型 辅助斜材 ===
             # 将 f_fixed (标准的交叉X型) 与 front_remaining (未交叉/半宽的辅材) 合并
             # 保证图纸上画了的所有斜材，一根不少地进入 3D 重建池
-            class2_front = {**f_fixed, **front_remaining}
-            class2_right = {**r_fixed, **right_remaining}
+            # All secondary members must use the same vertical coordinate
+            # basis as the corrected main legs/horizontals.  Without this,
+            # diagonal endpoints retain their view-local CAD heights and the
+            # front/right representations drift onto different Z layers.
+            class2_front = remap_vertical_coordinates(
+                {**f_fixed, **front_remaining},
+                front_height_span,
+                canonical_height_span,
+                source_support=front_source_support,
+                target_support=front_support,
+            )
+            class2_right = remap_vertical_coordinates(
+                {**r_fixed, **right_remaining},
+                right_height_span,
+                canonical_height_span,
+                source_support=right_source_support,
+                target_support=right_support,
+            )
 
             front_total = {**front_support, **front_horizontal, **class2_front}
             right_total = {**right_support, **right_horizontal, **class2_right}
+            front_reference_tiers = _classify_reference_tiers(
+                front_total,
+                {**front_support, **front_horizontal},
+            )
+            right_reference_tiers = _classify_reference_tiers(
+                right_total,
+                {**right_support, **right_horizontal},
+            )
 
             fbases = extract_bases_front(front_support, front_horizontal)
             sbases = extract_bases_side(right_support, right_horizontal)
@@ -674,6 +866,8 @@ def main(data_dir: str):
                     'front_horizontal': front_horizontal, 'right_horizontal': right_horizontal,
                     'front_x_fixed': class2_front,
                     'right_x_fixed': class2_right,
+                    'front_reference_tiers': front_reference_tiers,
+                    'right_reference_tiers': right_reference_tiers,
                 }
             }
             print(f"  - 双视图模型 '{stem}' 已处理并暂存。")
@@ -684,7 +878,7 @@ def main(data_dir: str):
         if not AUTO_SPLICE_SELECTION:
             print("\n" + "=" * 50)
             print("检测到多个模型，请选择作为拼接基准的模型：")
-            model_keys = list(all_models_data.keys())
+            model_keys = sorted(all_models_data.keys(), key=_drawing_sort_key)
             for idx, key in enumerate(model_keys):
                 print(f"  [{idx}] {key}")
             # 交互式读取用户输入：用于明确哪一段塔身作为整个拼接链的起点
@@ -737,7 +931,11 @@ def main(data_dir: str):
         if manual_scale_needed:
             while True:
                 try:
-                    target_id = input("请输入用于定标的双视图杆件ID (直接回车可跳过): ").strip()
+                    try:
+                        target_id = input("请输入用于定标的双视图杆件ID (直接回车可跳过): ").strip()
+                    except EOFError:
+                        print("  - 非交互运行，跳过手动缩放。")
+                        break
                     if not target_id:
                         print("  - 已跳过手动缩放。")
                         break
@@ -748,7 +946,11 @@ def main(data_dir: str):
                     if search_id not in final_coords_map:
                         print(f"  - 错误：杆件ID '{target_id}' 不存在。")
                         continue
-                    real_length = float(input(f"请输入杆件 '{target_id}' 的真实长度 (单位: 米): "))
+                    try:
+                        real_length = float(input(f"请输入杆件 '{target_id}' 的真实长度 (单位: 米): "))
+                    except EOFError:
+                        print("  - 非交互运行，跳过手动缩放。")
+                        break
                     final_coords_map = scale_by_member(
                         final_coords_map, search_id, real_length,
                     )
@@ -815,7 +1017,7 @@ def main(data_dir: str):
             ganjian_stage1, jiedian_stage1, pinjie_stage1, id_aliases
         )
     else:
-        print("\\n未处理任何双视图文件。本程序只处理双视图数据，单视图将被跳过。")
+        print("\n未处理任何双视图文件。本程序只处理双视图数据，单视图将被跳过。")
         ganjian_stage1, jiedian_stage1, pinjie_stage1 = [], [], []
 
     if single_view_files:

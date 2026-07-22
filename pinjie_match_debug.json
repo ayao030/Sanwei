@@ -1,0 +1,32 @@
+[
+  {
+    "drawing_id": 1,
+    "drawing_file": "01.txt",
+    "drawing_signature": 693.0,
+    "chunk_index": 0,
+    "chunk_signature": 600.0,
+    "chunk_z_min": 0.0,
+    "chunk_z_max": 600.0,
+    "chunk_node_ids": [
+      "10111",
+      "10113",
+      "12010",
+      "12011"
+    ]
+  },
+  {
+    "drawing_id": 2,
+    "drawing_file": "02.txt",
+    "drawing_signature": 1461.651463242862,
+    "chunk_index": 1,
+    "chunk_signature": 1500.0,
+    "chunk_z_min": 1200.0,
+    "chunk_z_max": 2700.0,
+    "chunk_node_ids": [
+      "11510",
+      "11511",
+      "10120",
+      "10121"
+    ]
+  }
+]
